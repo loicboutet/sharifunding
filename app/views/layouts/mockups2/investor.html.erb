@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title><%= content_for(:title) || "Investisseur - Sharifund" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.2/dist/basecoat.cdn.min.css">
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.2/dist/js/all.min.js" defer></script>
+  </head>
+
+  <body class="antialiased">
+    <style>
+      :root {
+        --sf-gold: #C4A574;
+        --sf-gold-light: #D4B584;
+        --sf-gold-pale: #F5F0E8;
+        --sf-black: #000000;
+        --sf-dark: #2C2C2C;
+        --sf-white: #FAFAFA;
+        --sf-green: #2D7A4F;
+        --sf-grey: #E5E5E5;
+        --sf-grey-dark: #6B7280;
+        --sf-blue: #4A90E2;
+        --sf-warning: #F59E0B;
+        --sf-error: #DC2626;
+      }
+      
+      body { background-color: var(--sf-white); font-family: 'Inter', sans-serif; }
+      
+      /* Custom background colors */
+      .bg-sf-gold { background-color: var(--sf-gold) !important; }
+      .bg-sf-gold-pale { background-color: var(--sf-gold-pale) !important; }
+      .bg-sf-green { background-color: var(--sf-green) !important; }
+      .bg-sf-dark { background-color: var(--sf-dark) !important; }
+      
+      /* Custom text colors */
+      .text-sf-gold { color: var(--sf-gold) !important; }
+      .text-sf-green { color: var(--sf-green) !important; }
+      .text-sf-dark { color: var(--sf-dark) !important; }
+      .text-sf-black { color: var(--sf-black) !important; }
+      .text-sf-white { color: var(--sf-white) !important; }
+      
+      /* Custom border colors */
+      .border-sf-gold { border-color: var(--sf-gold) !important; }
+      .border-sf-grey { border-color: var(--sf-grey) !important; }
+      
+      /* Hover states for custom backgrounds */
+      .hover\:bg-sf-gold-light:hover { background-color: var(--sf-gold-light) !important; }
+      .hover\:bg-sf-gold:hover { background-color: var(--sf-gold) !important; }
+      
+      /* Fix badge-outline visibility - dark background with white text */
+      .badge-outline,
+      .badge.badge-outline {
+        color: var(--sf-white) !important;
+        background-color: var(--sf-dark) !important;
+        border-color: var(--sf-dark) !important;
+      }
+      
+      .badge-outline:hover,
+      .badge.badge-outline:hover {
+        background-color: var(--sf-black) !important;
+        border-color: var(--sf-black) !important;
+      }
+      
+      /* Fix pour icons dans boutons - héritent de la couleur */
+      .btn svg, .btn-outline svg, .btn-ghost svg, a.btn svg {
+        flex-shrink: 0;
+      }
+      
+      /* Responsive Sidebar */
+      .sidebar-investor { 
+        width: 260px; 
+        background: white; 
+        border-right: 1px solid var(--sf-grey); 
+        min-height: calc(100vh - 64px); 
+        position: fixed; 
+        left: 0; 
+        top: 64px;
+        z-index: 40;
+        transition: transform 0.3s ease;
+      }
+      
+      /* Mobile: Hide sidebar by default */
+      @media (max-width: 768px) {
+        .sidebar-investor {
+          transform: translateX(-100%);
+        }
+        
+        .sidebar-investor.active {
+          transform: translateX(0);
+        }
+        
+        .main-content {
+          margin-left: 0 !important;
+        }
+        
+        .mobile-menu-btn {
+          display: block !important;
+        }
+        
+        .mobile-overlay {
+          display: none;
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 30;
+          top: 64px;
+        }
+        
+        .mobile-overlay.active {
+          display: block;
+        }
+      }
+      
+      .mobile-menu-btn {
+        display: none;
+      }
+      
+      .sidebar-investor .nav-item { 
+        padding: 12px 24px; 
+        color: var(--sf-dark); 
+        cursor: pointer; 
+        transition: all 0.3s ease; 
+        border-left: 3px solid transparent; 
+        display: flex; 
+        align-items: center; 
+        gap: 12px; 
+        text-decoration: none; 
+      }
+      .sidebar-investor .nav-item svg { flex-shrink: 0; }
+      .sidebar-investor .nav-item:hover { background: var(--sf-gold-pale); border-left-color: var(--sf-gold); }
+      .sidebar-investor .nav-item.active { background: var(--sf-gold-pale); border-left-color: var(--sf-gold); color: var(--sf-black); font-weight: 600; }
+      .main-content { margin-left: 260px; padding: 24px; }
+      .logo-sharifund { height: 48px; width: auto; }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .logo-sharifund {
+          height: 40px;
+        }
+      }
+    </style>
+    
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+    
+    <!-- Header -->
+    <header class="bg-white border-b border-sf-grey fixed top-0 left-0 right-0 z-50" style="height: 64px;">
+      <div class="h-full px-4 md:px-6 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-btn p-2 hover:bg-gray-100 rounded-lg" onclick="toggleMobileMenu()" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+          </button>
+          
+          <%= link_to mockups2_root_path, class: "flex items-center" do %>
+            <%= image_tag "logo.jpg", alt: "Sharifund", class: "logo-sharifund" %>
+          <% end %>
+        </div>
+        
+        <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center gap-3">
+            <span class="text-sm font-medium text-sf-dark">Fatima Z.</span>
+            <div class="w-8 h-8 rounded-full bg-sf-gold flex items-center justify-center text-white font-semibold text-sm">
+              FZ
+            </div>
+          </div>
+          <div class="md:hidden w-8 h-8 rounded-full bg-sf-gold flex items-center justify-center text-white font-semibold text-sm">
+            FZ
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-investor" id="sidebar">
+      <div class="py-6">
+        <%= link_to mockups2_investor_dashboard_path, class: "nav-item #{current_page?(mockups2_investor_dashboard_path) ? 'active' : ''}", onclick: "closeMobileMenu()" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
+          <span>Dashboard</span>
+        <% end %>
+        
+        <%= link_to mockups2_investor_projects_path, class: "nav-item #{controller_name == 'projects' ? 'active' : ''}", onclick: "closeMobileMenu()" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+          <span>Explorer</span>
+        <% end %>
+        
+        <%= link_to mockups2_investor_interests_path, class: "nav-item #{controller_name == 'interests' ? 'active' : ''}", onclick: "closeMobileMenu()" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span>Mes Engagements</span>
+          <span class="ml-auto badge bg-sf-green text-white text-xs">8</span>
+        <% end %>
+        
+        <%= link_to mockups2_investor_messages_path, class: "nav-item #{controller_name == 'messages' ? 'active' : ''}", onclick: "closeMobileMenu()" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Messages</span>
+          <span class="ml-auto badge badge-error text-xs">2</span>
+        <% end %>
+        
+        <div class="border-t border-sf-grey my-4"></div>
+        
+        <%= link_to "#", class: "nav-item", onclick: "closeMobileMenu()" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span>Paramètres</span>
+        <% end %>
+        
+        <%= link_to mockups2_root_path, class: "nav-item", onclick: "closeMobileMenu()" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Retour aux maquettes</span>
+        <% end %>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div style="margin-top: 64px;">
+      <main class="main-content">
+        <%= yield %>
+      </main>
+    </div>
+    
+    <script>
+      function toggleMobileMenu() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+      }
+      
+      function closeMobileMenu() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+      }
+    </script>
+  </body>
+</html>

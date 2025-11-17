@@ -1,0 +1,149 @@
+<% content_for :title, "Marquer mon engagement - Sharifund" %>
+
+<div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-6">
+  <div class="w-full max-w-2xl">
+    <!-- Back Button -->
+    <div class="mb-6">
+      <%= link_to mockups2_investor_projects_path, class: "btn-ghost inline-flex items-center gap-2" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Retour aux projets
+      <% end %>
+    </div>
+
+    <!-- Interest Form Card -->
+    <div class="card bg-white rounded-lg border border-gray-200 shadow-lg">
+      <header class="p-6 border-b border-gray-200">
+        <div class="text-center">
+          <div class="text-5xl mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h1 class="text-2xl font-bold text-sf-dark mb-2">Marquer mon engagement</h1>
+          <p class="text-sm text-gray-600">Pour le projet: <strong>Restaurant halal Paris 15ème</strong></p>
+        </div>
+      </header>
+
+      <section class="p-6">
+        <!-- Project Summary -->
+        <div class="p-4 bg-sf-gold-pale border border-sf-gold rounded-lg mb-6">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-yellow-200 to-yellow-100 flex items-center justify-center text-3xl flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-sf-dark mb-1">Restaurant halal Paris 15ème</h3>
+              <div class="flex gap-2 mb-2">
+                <span class="badge bg-purple-100 text-purple-800 text-xs">Mudaraba</span>
+                <span class="conformite-badge text-xs">
+                  <span>☪</span>
+                  <span>92%</span>
+                </span>
+              </div>
+              <div class="text-sm">
+                <span class="text-gray-600">Objectif:</span>
+                <span class="font-bold text-sf-dark ml-1">150 000 €</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="form space-y-6">
+          <div>
+            <label for="amount" class="label text-sm font-medium mb-2">
+              Montant que vous souhaitez investir *
+            </label>
+            <div class="flex items-center gap-3">
+              <input type="number" id="amount" class="input flex-1" placeholder="50000" min="1000" step="1000" value="50000">
+              <span class="text-gray-600 font-medium">€</span>
+            </div>
+            <input type="range" class="w-full mt-3" min="1000" max="150000" value="50000" step="1000">
+            <div class="flex justify-between text-xs text-gray-600 mt-1">
+              <span>1 000 €</span>
+              <span>150 000 €</span>
+            </div>
+            <p class="text-xs text-gray-600 mt-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 16v-4"/>
+                <path d="M12 8h.01"/>
+              </svg>
+              Montant minimum: 1 000 € • Sans engagement
+            </p>
+          </div>
+
+          <div>
+            <label for="message" class="label text-sm font-medium mb-2">
+              Message à l'entrepreneur (optionnel)
+            </label>
+            <textarea id="message" rows="4" class="textarea w-full" placeholder="Présentez-vous et expliquez votre motivation..."></textarea>
+            <p class="text-xs text-gray-600 mt-2">
+              Ce message sera visible par l'entrepreneur du projet
+            </p>
+          </div>
+
+          <!-- Information Notice -->
+          <div class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-blue-600 flex-shrink-0 mt-0.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 16v-4"/>
+                <path d="M12 8h.01"/>
+              </svg>
+              <div>
+                <p class="text-sm font-medium text-blue-900 mb-1">À savoir</p>
+                <ul class="text-xs text-blue-800 space-y-1">
+                  <li>• Cette démarche n'est pas contractuelle et sans engagement</li>
+                  <li>• Aucun paiement n'est effectué à ce stade (MVP Phase 1)</li>
+                  <li>• L'entrepreneur sera notifié de votre engagement</li>
+                  <li>• Vous pourrez retirer votre engagement à tout moment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sharia Compliance Reminder -->
+          <div class="p-4 bg-green-50 border-2 border-sf-green rounded-lg">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">☪</span>
+              <div>
+                <p class="text-sm font-semibold text-green-900 mb-1">Projet conforme Charia</p>
+                <p class="text-xs text-green-800">
+                  Ce projet a été validé par notre équipe et respecte les principes de la finance islamique.
+                </p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <footer class="p-6 border-t border-gray-200">
+        <div class="flex gap-3">
+          <%= link_to mockups2_investor_project_path(id: 1), class: "btn-outline flex-1" do %>
+            Annuler
+          <% end %>
+          <button type="submit" class="btn flex-1 bg-sf-gold text-sf-black hover:bg-sf-gold-light transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+            Confirmer mon engagement
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Trust Indicators -->
+    <div class="grid grid-cols-3 gap-4 mt-6">
+      <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+        <div class="text-2xl mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <p class="text-xs text-gray-600">Données sécurisées</p>
+      </div>
+      <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+        <div class="text-2xl mb-2">☪</div>
+        <p class="text-xs text-gray-600">100% Halal</p>
+      </div>
+      <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+        <div class="text-2xl mb-2">✓</div>
+        <p class="text-xs text-gray-600">Sans engagement</p>
+      </div>
+    </div>
+  </div>
+</div>

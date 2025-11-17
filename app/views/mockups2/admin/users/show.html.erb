@@ -1,0 +1,158 @@
+<% content_for :title, "Utilisateur Ahmed K. - Admin - Sharifund" %>
+
+<div class="max-w-7xl">
+  <!-- Breadcrumb -->
+  <nav class="mb-6">
+    <ol class="text-gray-600 flex items-center gap-2 text-sm">
+      <li><%= link_to "Dashboard", mockups2_admin_dashboard_path, class: "hover:text-sf-gold" %></li>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></li>
+      <li><%= link_to "Utilisateurs", mockups2_admin_users_path, class: "hover:text-sf-gold" %></li>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></li>
+      <li class="text-sf-dark font-medium">Ahmed Khalil</li>
+    </ol>
+  </nav>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Main Content -->
+    <div class="lg:col-span-2 space-y-6">
+      <!-- User Profile Card -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <div class="p-6 bg-gradient-to-br from-sf-gold-pale to-white border-b border-gray-200">
+          <div class="flex items-start gap-6">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-white font-bold text-3xl flex-shrink-0">
+              AK
+            </div>
+            <div class="flex-1">
+              <h1 class="text-3xl font-bold text-sf-dark mb-2">Ahmed Khalil</h1>
+              <div class="flex gap-2 mb-3">
+                <span class="badge bg-sf-gold text-sf-black">Entrepreneur</span>
+                <span class="badge badge-success text-xs">Compte actif</span>
+              </div>
+              <div class="text-sm text-gray-700 space-y-1">
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> ahmed.khalil@example.com</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg> +33 6 12 34 56 78</p>
+                <p>🏢 Restaurant Khalil & Co</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="p-6">
+          <h3 class="font-semibold text-sf-dark mb-3">Bio professionnelle</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Fort de 15 ans d'expérience dans la restauration, dont 8 ans comme chef dans des établissements étoilés, 
+            je souhaite créer un concept unique de gastronomie halal haut de gamme.
+          </p>
+        </section>
+      </div>
+
+      <!-- User Projects -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <h2 class="text-xl font-semibold text-sf-dark">Projets de cet entrepreneur (5)</h2>
+        </header>
+        <section class="p-6">
+          <div class="space-y-3">
+            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg">
+              <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-2xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+              <div class="flex-1">
+                <div class="font-semibold text-sf-dark">Restaurant halal Paris 15ème</div>
+                <div class="text-sm text-gray-600">150K€ • 12 engagements</div>
+              </div>
+              <span class="badge badge-success text-xs">Validé</span>
+            </div>
+
+            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg">
+              <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-2xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+              <div class="flex-1">
+                <div class="font-semibold text-sf-dark">E-commerce alimentaire</div>
+                <div class="text-sm text-gray-600">80K€</div>
+              </div>
+              <span class="badge badge-warning text-xs">En validation</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Admin Notes -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <h2 class="text-xl font-semibold text-sf-dark">Notes administratives</h2>
+        </header>
+        <section class="p-6">
+          <textarea rows="4" class="textarea w-full" placeholder="Ajoutez vos notes sur cet utilisateur..."></textarea>
+          <button class="btn-outline mt-3">Enregistrer les notes</a>
+        </section>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="lg:col-span-1 space-y-6">
+      <!-- Admin Actions -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <h2 class="font-semibold text-sf-dark">Actions admin</h2>
+        </header>
+        <section class="p-6 space-y-3">
+          <button class="btn-outline w-full">Modifier le profil</a>
+          <button class="btn-outline w-full text-orange-600 border-orange-600">
+            Suspendre le compte
+          </a>
+          <button class="btn-destructive w-full">
+            Supprimer définitivement
+          </a>
+        </section>
+      </div>
+
+      <!-- Account Info -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <h2 class="font-semibold text-sf-dark">Informations compte</h2>
+        </header>
+        <section class="p-6 space-y-3 text-sm">
+          <div>
+            <label class="text-gray-600">ID Utilisateur</label>
+            <p class="font-mono text-xs text-gray-700">#USER-2024-042</p>
+          </div>
+          <div>
+            <label class="text-gray-600">Inscrit le</label>
+            <p class="font-medium text-sf-dark">15 janvier 2024</p>
+          </div>
+          <div>
+            <label class="text-gray-600">Dernière connexion</label>
+            <p class="font-medium text-sf-dark">Aujourd'hui à 14:30</p>
+          </div>
+          <div>
+            <label class="text-gray-600">Email confirmé</label>
+            <span class="badge badge-success text-xs">Oui ✓</span>
+          </div>
+        </section>
+      </div>
+
+      <!-- Activity Stats -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <h2 class="font-semibold text-sf-dark">Statistiques</h2>
+        </header>
+        <section class="p-6 space-y-3 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-600">Projets créés</span>
+            <span class="font-bold text-sf-dark">5</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Projets validés</span>
+            <span class="font-bold text-sf-green">3</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Engagements reçus</span>
+            <span class="font-bold text-sf-gold">42</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Messages échangés</span>
+            <span class="font-bold text-sf-blue">87</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

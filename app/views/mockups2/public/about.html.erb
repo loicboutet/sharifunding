@@ -1,0 +1,271 @@
+<% content_for :title, "À propos - Sharifund" %>
+
+<div class="min-h-screen bg-white">
+  <!-- Header -->
+  <header class="border-b border-gray-200 sticky top-0 bg-white z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <%= link_to mockups2_root_path, class: "logo-sharifund flex items-center gap-2" do %>
+        <%= image_tag "logo.jpg", alt: "Sharifund", class: "h-10" %>
+      <% end %>
+      
+      <div class="flex items-center gap-6">
+        <%= link_to "Accueil", mockups2_root_path, class: "text-gray-600 hover:text-sf-gold transition-colors" %>
+        <%= link_to "À propos", mockups2_about_path, class: "text-sf-gold font-medium" %>
+        <%= link_to mockups2_auth_login_path, class: "btn-outline" do %>
+          Connexion
+        <% end %>
+        <%= link_to mockups2_auth_register_path, class: "btn bg-sf-gold text-sf-black hover:bg-sf-gold-light" do %>
+          Inscription
+        <% end %>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-sf-gold-pale via-white to-gray-50 py-20">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="text-6xl mb-6">☪</div>
+      <h1 class="text-5xl font-bold text-sf-dark mb-6">Sharifund</h1>
+      <p class="text-2xl text-gray-700 mb-4 max-w-3xl mx-auto">
+        La première plateforme de crowdfunding 100% conforme aux principes de la finance islamique
+      </p>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Nous mettons en relation entrepreneurs et investisseurs autour de projets halal, 
+        dans le respect des valeurs éthiques et de la transparence.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card bg-white p-8 rounded-lg border-2 border-sf-gold text-center">
+          <div class="text-5xl mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3 class="text-xl font-bold text-sf-dark mb-3">Notre Mission</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Faciliter l'accès au financement pour les entrepreneurs musulmans tout en offrant 
+            des opportunités d'investissement halal aux investisseurs.
+          </p>
+        </div>
+
+        <div class="card bg-white p-8 rounded-lg border border-gray-200 text-center hover:border-sf-gold transition-all">
+          <div class="text-5xl mb-4">☪</div>
+          <h3 class="text-xl font-bold text-sf-dark mb-3">Conformité Charia</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Tous nos projets sont analysés par IA et validés par notre équipe pour garantir 
+            leur conformité aux principes de la finance islamique.
+          </p>
+        </div>
+
+        <div class="card bg-white p-8 rounded-lg border border-gray-200 text-center hover:border-sf-gold transition-all">
+          <div class="text-5xl mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <h3 class="text-xl font-bold text-sf-dark mb-3">Transparence</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Aucune transaction cachée, aucun engagement (riba). Tout est clair, documenté 
+            et conforme aux règles éthiques.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-sf-dark mb-4">Comment ça marche?</h2>
+        <p class="text-lg text-gray-600">Un processus simple et sécurisé en 4 étapes</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div class="text-center">
+          <div class="w-20 h-20 rounded-full bg-sf-gold text-white flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+            1
+          </div>
+          <h3 class="text-xl font-semibold text-sf-dark mb-3">Inscription</h3>
+          <p class="text-gray-600">
+            Créez votre compte entrepreneur ou investisseur en quelques clics
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center">
+          <div class="w-20 h-20 rounded-full bg-sf-gold text-white flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+            2
+          </div>
+          <h3 class="text-xl font-semibold text-sf-dark mb-3">Soumission</h3>
+          <p class="text-gray-600">
+            Les entrepreneurs soumettent leurs projets avec documents à l'appui
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center">
+          <div class="w-20 h-20 rounded-full bg-sf-gold text-white flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+            3
+          </div>
+          <h3 class="text-xl font-semibold text-sf-dark mb-3">Validation</h3>
+          <p class="text-gray-600">
+            Notre IA et notre équipe valident la conformité Charia du projet
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="text-center">
+          <div class="w-20 h-20 rounded-full bg-sf-gold text-white flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+            4
+          </div>
+          <h3 class="text-xl font-semibold text-sf-dark mb-3">Mise en relation</h3>
+          <p class="text-gray-600">
+            Les investisseurs marquent leur engagement et contactent les entrepreneurs
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Islamic Finance Types -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-sf-dark mb-4">Types de financement halal</h2>
+        <p class="text-lg text-gray-600">Nous supportons les principaux contrats de finance islamique</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card bg-white p-6 rounded-lg border border-gray-200 hover:border-sf-gold transition-all">
+          <div class="w-16 h-16 rounded-lg bg-purple-100 flex items-center justify-center text-3xl mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-sf-dark mb-3">Mudaraba</h3>
+          <p class="text-sm text-gray-600 mb-3">Contrat de commandite</p>
+          <p class="text-gray-700 leading-relaxed">
+            L'investisseur fournit le capital, l'entrepreneur gère le projet. 
+            Les profits sont partagés selon un ratio prédéfini, les pertes sont supportées par le financier.
+          </p>
+        </div>
+
+        <div class="card bg-white p-6 rounded-lg border border-gray-200 hover:border-sf-gold transition-all">
+          <div class="w-16 h-16 rounded-lg bg-blue-100 flex items-center justify-center text-3xl mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-sf-dark mb-3">Musharaka</h3>
+          <p class="text-sm text-gray-600 mb-3">Contrat de partenariat</p>
+          <p class="text-gray-700 leading-relaxed">
+            Les deux parties contribuent au capital et participent à la gestion. 
+            Profits et pertes sont partagés proportionnellement aux apports.
+          </p>
+        </div>
+
+        <div class="card bg-white p-6 rounded-lg border border-gray-200 hover:border-sf-gold transition-all">
+          <div class="w-16 h-16 rounded-lg bg-green-100 flex items-center justify-center text-3xl mb-4">
+            🏪
+          </div>
+          <h3 class="text-xl font-bold text-sf-dark mb-3">Murabaha</h3>
+          <p class="text-sm text-gray-600 mb-3">Vente à tempérament</p>
+          <p class="text-gray-700 leading-relaxed">
+            Achat d'un bien par le financier puis revente à l'entrepreneur avec une marge 
+            transparente, payable de manière différée.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-gradient-to-br from-sf-gold-pale to-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-sf-dark mb-4">Sharifund en chiffres</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="text-5xl font-bold text-sf-dark mb-2">248</div>
+          <div class="text-gray-600">Utilisateurs actifs</div>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-bold text-sf-dark mb-2">67</div>
+          <div class="text-gray-600">Projets validés</div>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-bold text-sf-dark mb-2">2.4M€</div>
+          <div class="text-gray-600">Montant simulé</div>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-bold text-sf-green mb-2">100%</div>
+          <div class="text-gray-600">Conforme Charia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-sf-dark mb-6">Prêt à commencer?</h2>
+      <p class="text-xl text-gray-600 mb-8">
+        Rejoignez notre communauté d'entrepreneurs et d'investisseurs engagés
+      </p>
+      <div class="flex gap-4 justify-center">
+        <%= link_to mockups2_auth_register_path, class: "btn bg-sf-gold text-sf-black hover:bg-sf-gold-light text-lg px-8 py-4" do %>
+          Créer mon compte
+        <% end %>
+        <%= link_to mockups2_auth_login_path, class: "btn-outline text-lg px-8 py-4" do %>
+          Se connecter
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-sf-dark text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="logo-sharifund flex items-center gap-2 mb-4" style="color: var(--sf-gold);">
+            <%= image_tag "logo.jpg", alt: "Sharifund", class: "h-10" %>
+          </div>
+          <p class="text-gray-400 text-sm">
+            Plateforme de financement halal innovante et transparente
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Plateforme</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-sf-gold">Comment ça marche</a></li>
+            <li><a href="#" class="hover:text-sf-gold">Types de financement</a></li>
+            <li><a href="#" class="hover:text-sf-gold">Projets</a></li>
+            <li><a href="#" class="hover:text-sf-gold">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Légal</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-sf-gold">Conditions d'utilisation</a></li>
+            <li><a href="#" class="hover:text-sf-gold">Politique de confidentialité</a></li>
+            <li><a href="#" class="hover:text-sf-gold">Mentions légales</a></li>
+            <li><a href="#" class="hover:text-sf-gold">Conformité Charia</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>contact@sharifund.com</li>
+            <li>+33 1 23 45 67 89</li>
+            <li>Paris, France</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+        <p>&copy; 2024 Sharifund. Tous droits réservés. • Plateforme de financement halal</p>
+      </div>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,290 @@
+<% content_for :title, "Nouveau Projet - Sharifund" %>
+
+<div class="max-w-4xl mx-auto">
+  <!-- Page Header -->
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-sf-dark mb-2">Créer un nouveau projet</h1>
+    <p class="text-lg text-gray-600">Remplissez les informations de votre projet pour démarrer</p>
+  </div>
+
+  <!-- Progress Steps -->
+  <div class="card bg-white rounded-lg border border-gray-200 p-6 mb-6">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-sf-gold text-white flex items-center justify-center font-semibold text-sm">1</div>
+        <span class="font-medium text-sf-dark">Informations générales</span>
+      </div>
+      <div class="flex-1 h-1 bg-gray-200 mx-4"></div>
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-semibold text-sm">2</div>
+        <span class="text-gray-600">Financement</span>
+      </div>
+      <div class="flex-1 h-1 bg-gray-200 mx-4"></div>
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-semibold text-sm">3</div>
+        <span class="text-gray-600">Documents</span>
+      </div>
+    </div>
+  </div>
+
+  <form class="form space-y-6">
+    <!-- Basic Information Card -->
+    <div class="card bg-white rounded-lg border border-gray-200">
+      <header class="p-6 border-b border-gray-200">
+        <h2 class="text-xl font-semibold text-sf-dark">Informations du projet</h2>
+      </header>
+      <section class="p-6 space-y-6">
+        <div>
+          <label for="title" class="label text-sm font-medium mb-2">Titre du projet *</label>
+          <input type="text" id="title" class="input w-full" placeholder="Ex: Restaurant halal gastronomique Paris 15ème">
+          <p class="text-xs text-gray-600 mt-2">Un titre clair et accrocheur pour votre projet</p>
+        </div>
+
+        <div>
+          <label for="short_description" class="label text-sm font-medium mb-2">Description courte *</label>
+          <textarea id="short_description" rows="2" class="textarea w-full" placeholder="Résumé en une phrase de votre projet..."></textarea>
+          <p class="text-xs text-gray-600 mt-2">Maximum 200 caractères</p>
+        </div>
+
+        <div>
+          <label for="description" class="label text-sm font-medium mb-2">Description détaillée *</label>
+          <textarea id="description" rows="6" class="textarea w-full" placeholder="Décrivez votre projet en détail..."></textarea>
+          <p class="text-xs text-gray-600 mt-2">Expliquez votre concept, votre marché cible, vos avantages concurrentiels...</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="sector" class="label text-sm font-medium mb-2">Secteur d'activité *</label>
+            <select id="sector" class="select w-full">
+              <option value="">Sélectionnez un secteur</option>
+              <option value="restauration"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg> Restauration</option>
+              <option value="tech"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> Technologie</option>
+              <option value="immobilier"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Immobilier</option>
+              <option value="commerce"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Commerce</option>
+              <option value="education"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Éducation</option>
+              <option value="sante"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"/></svg> Santé</option>
+              <option value="transport"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg> Transport</option>
+              <option value="autre">📦 Autre</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="duration" class="label text-sm font-medium mb-2">Durée estimée</label>
+            <select id="duration" class="select w-full">
+              <option value="">Sélectionnez une durée</option>
+              <option value="6">6 mois</option>
+              <option value="12">12 mois</option>
+              <option value="18">18 mois</option>
+              <option value="24">24 mois</option>
+              <option value="36">36 mois</option>
+              <option value="48">48 mois</option>
+            </select>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Funding Information Card -->
+    <div class="card bg-white rounded-lg border border-gray-200">
+      <header class="p-6 border-b border-gray-200">
+        <h2 class="text-xl font-semibold text-sf-dark">Informations financières</h2>
+      </header>
+      <section class="p-6 space-y-6">
+        <div>
+          <label for="funding_goal" class="label text-sm font-medium mb-2">Montant recherché *</label>
+          <div class="flex gap-2">
+            <input type="number" id="funding_goal" class="input flex-1" placeholder="150000">
+            <select class="select w-24">
+              <option>EUR</option>
+              <option>USD</option>
+            </select>
+          </div>
+          <input type="range" class="w-full mt-4" min="0" max="1000000" value="150000" step="10000">
+          <p class="text-xs text-gray-600 mt-2">Montant total que vous souhaitez lever</p>
+        </div>
+
+        <div>
+          <label class="label text-sm font-medium mb-2">Type de financement halal *</label>
+          <p class="text-xs text-gray-600 mb-3">Sélectionnez le type de contrat islamique le plus adapté à votre projet</p>
+          
+          <div class="space-y-3">
+            <label class="flex items-start gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-sf-gold transition-all">
+              <input type="radio" name="contract_type" value="mudaraba" class="mt-1">
+              <div class="flex-1">
+                <div class="font-semibold text-sf-dark mb-1">Mudaraba (Commandite)</div>
+                <p class="text-sm text-gray-600">
+                  L'investisseur apporte le capital, vous gérez le projet. Les profits sont partagés selon un ratio prédéfini.
+                </p>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-sf-gold transition-all">
+              <input type="radio" name="contract_type" value="musharaka" class="mt-1">
+              <div class="flex-1">
+                <div class="font-semibold text-sf-dark mb-1">Musharaka (Partenariat)</div>
+                <p class="text-sm text-gray-600">
+                  Partenariat où investisseur et entrepreneur contribuent au capital et participent à la gestion.
+                </p>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-sf-gold transition-all">
+              <input type="radio" name="contract_type" value="murabaha" class="mt-1">
+              <div class="flex-1">
+                <div class="font-semibold text-sf-dark mb-1">Murabaha (Vente à tempérament)</div>
+                <p class="text-sm text-gray-600">
+                  Achat d'actifs par l'investisseur puis revente avec marge bénéficiaire transparente.
+                </p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label for="expected_return" class="label text-sm font-medium mb-2">Rentabilité annuelle estimée</label>
+          <div class="flex items-center gap-3">
+            <input type="number" id="expected_return" class="input flex-1" placeholder="12" step="0.1">
+            <span class="text-gray-600">%</span>
+          </div>
+          <p class="text-xs text-gray-600 mt-2">Estimation du retour sur investissement annuel</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Milestones Card -->
+    <div class="card bg-white rounded-lg border border-gray-200">
+      <header class="p-6 border-b border-gray-200">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl font-semibold text-sf-dark">Jalons du projet</h2>
+          <button type="button" class="btn-outline btn-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 5v14"/><path d="M5 12h14"/>
+            </svg>
+            Ajouter un jalon
+          </a>
+        </div>
+      </header>
+      <section class="p-6">
+        <p class="text-sm text-gray-600 mb-4">Définissez les étapes clés de votre projet pour rassurer les investisseurs</p>
+        
+        <div class="space-y-3">
+          <!-- Milestone 1 -->
+          <div class="flex items-start gap-3 p-4 border border-gray-200 rounded-lg">
+            <div class="w-8 h-8 rounded-full bg-sf-gold text-white flex items-center justify-center font-semibold text-sm flex-shrink-0">1</div>
+            <div class="flex-1">
+              <input type="text" class="input w-full mb-2" placeholder="Titre du jalon" value="Obtention du local commercial">
+              <textarea rows="2" class="textarea w-full text-sm" placeholder="Description...">Signature du bail commercial et début des travaux d'aménagement</textarea>
+              <div class="flex gap-4 mt-2">
+                <input type="date" class="input text-sm" value="2024-03-01">
+              </div>
+            </div>
+            <button type="button" class="btn-icon-outline btn-sm text-red-600 border-red-600 hover:bg-red-50">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="flex items-start gap-3 p-4 border border-gray-200 rounded-lg">
+            <div class="w-8 h-8 rounded-full bg-sf-gold text-white flex items-center justify-center font-semibold text-sm flex-shrink-0">2</div>
+            <div class="flex-1">
+              <input type="text" class="input w-full mb-2" placeholder="Titre du jalon" value="Ouverture du restaurant">
+              <textarea rows="2" class="textarea w-full text-sm" placeholder="Description...">Inauguration et début de l'activité commerciale</textarea>
+              <div class="flex gap-4 mt-2">
+                <input type="date" class="input text-sm" value="2024-06-01">
+              </div>
+            </div>
+            <button type="button" class="btn-icon-outline btn-sm text-red-600 border-red-600 hover:bg-red-50">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Placeholder for new milestone -->
+          <button type="button" class="w-full p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-sf-gold hover:bg-sf-gold-pale transition-all text-gray-600 hover:text-sf-dark">
+            <span class="flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14"/><path d="M5 12h14"/>
+              </svg>
+              <span class="font-medium">Ajouter un jalon</span>
+            </span>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Documents Card -->
+    <div class="card bg-white rounded-lg border border-gray-200">
+      <header class="p-6 border-b border-gray-200">
+        <h2 class="text-xl font-semibold text-sf-dark">Documents du projet</h2>
+      </header>
+      <section class="p-6">
+        <p class="text-sm text-gray-600 mb-4">Ajoutez vos documents (business plan, prévisionnel financier, certifications...)</p>
+        
+        <!-- Upload Area -->
+        <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-sf-gold hover:bg-sf-gold-pale transition-all cursor-pointer">
+          <div class="text-4xl mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
+          <p class="font-medium text-sf-dark mb-1">Cliquez pour uploader ou glissez vos fichiers</p>
+          <p class="text-sm text-gray-600">PDF, DOC, XLS (max 10 MB par fichier)</p>
+        </div>
+
+        <!-- Uploaded Files List (empty state) -->
+        <div class="mt-4 text-sm text-gray-600 text-center">
+          Aucun document uploadé pour le moment
+        </div>
+      </section>
+    </div>
+
+    <!-- Helper Card -->
+    <div class="card bg-blue-50 border-2 border-blue-200 rounded-lg">
+      <section class="p-6">
+        <div class="flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-blue-600 flex-shrink-0">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4"/>
+            <path d="M12 8h.01"/>
+          </svg>
+          <div>
+            <h3 class="font-semibold text-blue-900 mb-2">Aide pour bien démarrer</h3>
+            <ul class="text-sm text-blue-800 space-y-1">
+              <li>• Soyez transparent sur votre activité et vos besoins</li>
+              <li>• Détaillez comment le financement halal s'applique à votre cas</li>
+              <li>• Ajoutez un business plan solide et des prévisions réalistes</li>
+              <li>• Définissez des jalons mesurables et atteignables</li>
+              <li>• Préparez vos certificats halal si applicable</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="flex items-center justify-between gap-4 pt-6">
+      <button type="button" class="btn-outline">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Annuler
+      </a>
+      
+      <div class="flex gap-3">
+        <button type="button" class="btn-outline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+            <polyline points="17 21 17 13 7 13 7 21"/>
+            <polyline points="7 3 7 8 15 8"/>
+          </svg>
+          Sauvegarder en brouillon
+        </a>
+        <button type="submit" class="btn bg-sf-gold text-sf-black hover:bg-sf-gold-light transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          Soumettre pour validation
+        </a>
+      </div>
+    </div>
+  </form>
+</div>

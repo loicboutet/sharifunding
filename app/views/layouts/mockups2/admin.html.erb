@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title><%= content_for(:title) || "Admin - Sharifund" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.2/dist/basecoat.cdn.min.css">
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.2/dist/js/all.min.js" defer></script>
+  </head>
+
+  <body class="antialiased">
+    <style>
+      :root {
+        --sf-gold: #C4A574;
+        --sf-gold-light: #D4B584;
+        --sf-gold-pale: #F5F0E8;
+        --sf-black: #000000;
+        --sf-dark: #2C2C2C;
+        --sf-white: #FAFAFA;
+        --sf-green: #2D7A4F;
+        --sf-grey: #E5E5E5;
+        --sf-grey-dark: #6B7280;
+        --sf-blue: #4A90E2;
+        --sf-warning: #F59E0B;
+        --sf-error: #DC2626;
+      }
+      
+      body { background-color: var(--sf-white); font-family: 'Inter', sans-serif; }
+      
+      /* Custom background colors */
+      .bg-sf-gold { background-color: var(--sf-gold) !important; }
+      .bg-sf-gold-pale { background-color: var(--sf-gold-pale) !important; }
+      .bg-sf-green { background-color: var(--sf-green) !important; }
+      .bg-sf-dark { background-color: var(--sf-dark) !important; }
+      
+      /* Custom text colors */
+      .text-sf-gold { color: var(--sf-gold) !important; }
+      .text-sf-green { color: var(--sf-green) !important; }
+      .text-sf-dark { color: var(--sf-dark) !important; }
+      .text-sf-black { color: var(--sf-black) !important; }
+      .text-sf-white { color: var(--sf-white) !important; }
+      
+      /* Custom border colors */
+      .border-sf-gold { border-color: var(--sf-gold) !important; }
+      .border-sf-grey { border-color: var(--sf-grey) !important; }
+      
+      /* Hover states for custom backgrounds */
+      .hover\:bg-sf-gold-light:hover { background-color: var(--sf-gold-light) !important; }
+      .hover\:bg-sf-gold:hover { background-color: var(--sf-gold) !important; }
+      
+      /* Fix badge-outline visibility - dark background with white text */
+      .badge-outline,
+      .badge.badge-outline {
+        color: var(--sf-white) !important;
+        background-color: var(--sf-dark) !important;
+        border-color: var(--sf-dark) !important;
+      }
+      
+      .badge-outline:hover,
+      .badge.badge-outline:hover {
+        background-color: var(--sf-black) !important;
+        border-color: var(--sf-black) !important;
+      }
+      
+      /* Fix pour icons dans boutons - ensure proper spacing and inheritance */
+      .btn svg, 
+      .btn-outline svg, 
+      .btn-ghost svg, 
+      a.btn svg,
+      button.btn svg {
+        flex-shrink: 0;
+      }
+      
+      /* Responsive Sidebar */
+      .sidebar-admin {
+        width: 260px;
+        background: white;
+        border-right: 1px solid var(--sf-grey);
+        min-height: calc(100vh - 64px);
+        position: fixed;
+        left: 0;
+        top: 64px;
+        z-index: 40;
+        transition: transform 0.3s ease;
+      }
+      
+      /* Mobile: Hide sidebar by default */
+      @media (max-width: 768px) {
+        .sidebar-admin {
+          transform: translateX(-100%);
+        }
+        
+        .sidebar-admin.active {
+          transform: translateX(0);
+        }
+        
+        .main-content {
+          margin-left: 0 !important;
+        }
+        
+        .mobile-menu-btn {
+          display: block !important;
+        }
+        
+        .mobile-overlay {
+          display: none;
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 30;
+          top: 64px;
+        }
+        
+        .mobile-overlay.active {
+          display: block;
+        }
+      }
+      
+      .mobile-menu-btn {
+        display: none;
+      }
+      
+      .sidebar-admin .nav-item {
+        padding: 12px 24px;
+        color: var(--sf-dark);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-left: 3px solid transparent;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+      
+      .sidebar-admin .nav-item svg {
+        flex-shrink: 0;
+      }
+      
+      .sidebar-admin .nav-item:hover {
+        background: var(--sf-gold-pale);
+        border-left-color: var(--sf-gold);
+      }
+      
+      .sidebar-admin .nav-item.active {
+        background: var(--sf-gold-pale);
+        border-left-color: var(--sf-gold);
+        color: var(--sf-black);
+        font-weight: 600;
+      }
+      
+      .main-content {
+        margin-left: 260px;
+        padding: 24px;
+      }
+      
+      .logo-sharifund {
+        height: 48px;
+        width: auto;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .logo-sharifund {
+          height: 40px;
+        }
+      }
+    </style>
+    
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+    
+    <!-- Header -->
+    <header class="bg-white border-b border-sf-grey fixed top-0 left-0 right-0 z-50" style="height: 64px;">
+      <div class="h-full px-4 md:px-6 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-btn p-2 hover:bg-gray-100 rounded-lg" onclick="toggleMobileMenu()" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+          </button>
+          
+          <%= link_to mockups2_root_path, class: "flex items-center" do %>
+            <%= image_tag "logo.jpg", alt: "Sharifund", class: "logo-sharifund" %>
+          <% end %>
+        </div>
+        
+        <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center gap-3">
+            <span class="text-sm font-medium text-sf-dark">Admin</span>
+            <div class="w-8 h-8 rounded-full bg-sf-gold flex items-center justify-center text-white font-semibold text-sm">
+              A
+            </div>
+          </div>
+          <div class="md:hidden w-8 h-8 rounded-full bg-sf-gold flex items-center justify-center text-white font-semibold text-sm">
+            A
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-admin" id="sidebar">
+      <div class="py-6">
+        <%= link_to mockups2_admin_dashboard_path, class: "nav-item #{current_page?(mockups2_admin_dashboard_path) ? 'active' : ''}", onclick: "closeMobileMenu()" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
+          <span>Dashboard</span>
+        <% end %>
+        
+        <%= link_to mockups2_admin_projects_path, class: "nav-item #{controller_name == 'projects' ? 'active' : ''}", onclick: "closeMobileMenu()" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+          <span>Projets</span>
+          <span class="ml-auto badge badge-warning text-xs">3</span>
+        <% end %>
+        
+        <%= link_to mockups2_admin_users_path, class: "nav-item #{controller_name == 'users' ? 'active' : ''}", onclick: "closeMobileMenu()" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Utilisateurs</span>
+        <% end %>
+        
+        <%= link_to mockups2_admin_milestones_path, class: "nav-item #{controller_name == 'milestones' ? 'active' : ''}", onclick: "closeMobileMenu()" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Jalons</span>
+          <span class="ml-auto badge badge-info text-xs">2</span>
+        <% end %>
+        
+        <%= link_to mockups2_admin_statistics_path, class: "nav-item #{controller_name == 'statistics' ? 'active' : ''}", onclick: "closeMobileMenu()" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          <span>Statistiques</span>
+        <% end %>
+        
+        <div class="border-t border-sf-grey my-4"></div>
+        
+        <%= link_to mockups2_root_path, class: "nav-item", onclick: "closeMobileMenu()" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Retour aux maquettes</span>
+        <% end %>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div style="margin-top: 64px;">
+      <main class="main-content">
+        <%= yield %>
+      </main>
+    </div>
+    
+    <script>
+      function toggleMobileMenu() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+      }
+      
+      function closeMobileMenu() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+      }
+    </script>
+  </body>
+</html>

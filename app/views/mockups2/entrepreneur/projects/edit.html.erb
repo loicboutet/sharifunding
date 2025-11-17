@@ -1,0 +1,93 @@
+<% content_for :title, "Modifier le Projet - Sharifund" %>
+
+<div class="max-w-4xl mx-auto">
+  <!-- Page Header -->
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-sf-dark mb-2">Modifier le projet</h1>
+    <p class="text-lg text-gray-600">Restaurant halal Paris 15ème</p>
+  </div>
+
+  <!-- Alert - Project Status -->
+  <div class="alert bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4 mb-6">
+    <div class="flex items-start gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-yellow-600 flex-shrink-0">
+        <path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+        <path d="M12 9v4"/>
+        <path d="M12 17h.01"/>
+      </svg>
+      <div>
+        <h3 class="font-semibold text-yellow-900 mb-1">Projet en validation</h3>
+        <p class="text-sm text-yellow-800">
+          Vous pouvez modifier les informations mais une nouvelle validation sera nécessaire si vous soumettez des changements majeurs.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <form class="form space-y-6">
+    <!-- Basic Info -->
+    <div class="card bg-white rounded-lg border border-gray-200">
+      <header class="p-6 border-b border-gray-200">
+        <h2 class="text-xl font-semibold text-sf-dark">Informations générales</h2>
+      </header>
+      <section class="p-6 space-y-4">
+        <div>
+          <label for="title" class="label text-sm font-medium mb-2">Titre du projet</label>
+          <input type="text" id="title" class="input w-full" value="Restaurant halal Paris 15ème">
+        </div>
+
+        <div>
+          <label for="short_desc" class="label text-sm font-medium mb-2">Description courte</label>
+          <textarea id="short_desc" rows="2" class="textarea w-full">Restaurant gastronomique halal certifié dans le 15ème arrondissement</textarea>
+        </div>
+
+        <div>
+          <label for="description" class="label text-sm font-medium mb-2">Description détaillée</label>
+          <textarea id="description" rows="6" class="textarea w-full">Création d'un restaurant gastronomique halal dans le 15ème arrondissement de Paris...</textarea>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="sector" class="label text-sm font-medium mb-2">Secteur</label>
+            <select id="sector" class="select w-full">
+              <option value="restauration" selected><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg> Restauration</option>
+              <option value="tech"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> Technologie</option>
+            </select>
+          </div>
+          <div>
+            <label for="contract" class="label text-sm font-medium mb-2">Type de contrat</label>
+            <select id="contract" class="select w-full">
+              <option value="mudaraba" selected>Mudaraba</option>
+              <option value="musharaka">Musharaka</option>
+              <option value="murabaha">Murabaha</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="funding_goal" class="label text-sm font-medium mb-2">Montant recherché</label>
+            <div class="flex gap-2">
+              <input type="number" id="funding_goal" class="input flex-1" value="150000">
+              <span class="input w-16 text-center">€</span>
+            </div>
+          </div>
+          <div>
+            <label for="duration" class="label text-sm font-medium mb-2">Durée (mois)</label>
+            <input type="number" id="duration" class="input w-full" value="24">
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="flex gap-3">
+      <%= link_to mockups2_entrepreneur_project_path(id: 1), class: "btn-outline" do %>
+        Annuler
+      <% end %>
+      <button type="submit" class="btn bg-sf-gold text-sf-black flex-1">
+        Enregistrer les modifications
+      </a>
+    </div>
+  </form>
+</div>

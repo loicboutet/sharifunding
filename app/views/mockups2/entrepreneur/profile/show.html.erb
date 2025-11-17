@@ -1,0 +1,95 @@
+<% content_for :title, "Mon Profil - Entrepreneur - Sharifund" %>
+
+<div class="max-w-4xl mx-auto">
+  <!-- Page Header -->
+  <div class="mb-8 flex items-center justify-between">
+    <div>
+      <h1 class="text-4xl font-bold text-sf-dark mb-2">Mon profil</h1>
+      <p class="text-lg text-gray-600">Vos informations professionnelles</p>
+    </div>
+    <%= link_to mockups2_entrepreneur_edit_profile_path, class: "btn bg-sf-gold text-sf-black" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+      </svg>
+      Modifier
+    <% end %>
+  </div>
+
+  <!-- Profile Card -->
+  <div class="card bg-white rounded-lg border border-gray-200 mb-6">
+    <div class="p-6 bg-gradient-to-br from-sf-gold-pale to-white border-b border-gray-200">
+      <div class="flex items-start gap-6">
+        <div class="w-24 h-24 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-white font-bold text-3xl">
+          AK
+        </div>
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold text-sf-dark mb-2">Ahmed Khalil</h2>
+          <div class="flex gap-2 mb-3">
+            <span class="badge bg-sf-gold text-sf-black">Entrepreneur</span>
+            <span class="badge badge-success text-xs">Compte vérifié ✓</span>
+          </div>
+          <div class="text-sm text-gray-700 space-y-1">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> ahmed.khalil@example.com</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg> +33 6 12 34 56 78</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="p-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="text-sm font-medium text-gray-600 mb-1 block">Entreprise</label>
+          <p class="font-semibold text-sf-dark">Restaurant Khalil & Co</p>
+        </div>
+        <div>
+          <label class="text-sm font-medium text-gray-600 mb-1 block">Secteur</label>
+          <span class="badge bg-orange-100 text-orange-800">Restauration</span>
+        </div>
+        <div>
+          <label class="text-sm font-medium text-gray-600 mb-1 block">Site web</label>
+          <a href="#" class="text-sf-gold hover:text-sf-gold-light">www.khalilrestaurant.fr</a>
+        </div>
+        <div>
+          <label class="text-sm font-medium text-gray-600 mb-1 block">LinkedIn</label>
+          <a href="#" class="text-sf-gold hover:text-sf-gold-light">linkedin.com/in/ahmedkhalil</a>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <label class="text-sm font-medium text-gray-600 mb-2 block">Bio professionnelle</label>
+        <p class="text-gray-700 leading-relaxed">
+          Fort de 15 ans d'expérience dans la restauration, dont 8 ans comme chef dans des établissements étoilés, 
+          je souhaite créer un concept unique de gastronomie halal haut de gamme qui allie tradition et modernité.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Activity Summary -->
+  <div class="card bg-white rounded-lg border border-gray-200">
+    <header class="p-6 border-b border-gray-200">
+      <h2 class="text-xl font-semibold text-sf-dark">Mon activité</h2>
+    </header>
+    <section class="p-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="text-center p-4 bg-gray-50 rounded-lg">
+          <div class="text-3xl font-bold text-sf-dark mb-1">5</div>
+          <div class="text-sm text-gray-600">Projets créés</div>
+        </div>
+        <div class="text-center p-4 bg-green-50 rounded-lg">
+          <div class="text-3xl font-bold text-sf-green mb-1">3</div>
+          <div class="text-sm text-gray-600">Projets validés</div>
+        </div>
+        <div class="text-center p-4 bg-yellow-50 rounded-lg">
+          <div class="text-3xl font-bold text-sf-gold mb-1">42</div>
+          <div class="text-sm text-gray-600">Engagements reçus</div>
+        </div>
+        <div class="text-center p-4 bg-blue-50 rounded-lg">
+          <div class="text-3xl font-bold text-sf-blue mb-1">1,247</div>
+          <div class="text-sm text-gray-600">Vues totales</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

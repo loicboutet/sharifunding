@@ -1,0 +1,252 @@
+<% content_for :title, "Détails Projet - Admin - Sharifund" %>
+
+<div class="max-w-7xl">
+  <!-- Breadcrumb -->
+  <nav class="mb-6">
+    <ol class="text-gray-600 flex items-center gap-2 text-sm">
+      <li><%= link_to "Dashboard", mockups2_admin_dashboard_path, class: "hover:text-sf-gold" %></li>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></li>
+      <li><%= link_to "Projets", mockups2_admin_projects_path, class: "hover:text-sf-gold" %></li>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></li>
+      <li class="text-sf-dark font-medium">Restaurant halal Paris</li>
+    </ol>
+  </nav>
+
+  <!-- Quick Actions Bar -->
+  <div class="flex gap-3 mb-6">
+    <%= link_to mockups2_admin_project_validation_path(id: 1), class: "btn bg-sf-green text-white" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20 6 9 17l-5-5"/>
+      </svg>
+      Voir validation Charia
+    <% end %>
+    <button class="btn-outline">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect width="20" height="16" x="2" y="4" rx="2"/>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      </svg>
+      Contacter entrepreneur
+    </a>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Main Content -->
+    <div class="lg:col-span-2 space-y-6">
+      <!-- Project Overview -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <div class="relative">
+          <div class="w-full h-64 bg-gradient-to-br from-yellow-200 to-yellow-50 flex items-center justify-center">
+            <div class="text-8xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+          </div>
+          <div class="absolute top-4 right-4">
+            <span class="conformite-badge shadow-lg">
+              <span>☪</span>
+              <span>Score IA: 92%</span>
+            </span>
+          </div>
+        </div>
+        
+        <div class="p-6">
+          <h1 class="text-3xl font-bold text-sf-dark mb-4">Restaurant halal Paris 15ème</h1>
+          
+          <div class="flex gap-2 mb-6">
+            <span class="badge badge-warning">En validation</span>
+            <span class="badge bg-purple-100 text-purple-800">Mudaraba</span>
+            <span class="badge bg-orange-100 text-orange-800">Restauration</span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg mb-6">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-sf-dark">150K €</div>
+              <div class="text-xs text-gray-600 mt-1">Objectif</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-sf-gold">12</div>
+              <div class="text-xs text-gray-600 mt-1">Engagements</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-sf-blue">342</div>
+              <div class="text-xs text-gray-600 mt-1">Vues</div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-sf-dark mb-3">Description</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Création d'un restaurant gastronomique halal dans le 15ème arrondissement de Paris. 
+              Concept unique mêlant cuisine traditionnelle et moderne, avec certification halal officielle. 
+              Capacité de 60 couverts, terrasse extérieure, cuisine ouverte.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interests Received -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <h2 class="text-xl font-semibold text-sf-dark">Engagements reçus (12)</h2>
+        </header>
+        <section class="p-6">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold">
+                  MH
+                </div>
+                <div>
+                  <div class="font-medium text-sf-dark">Mohammed H.</div>
+                  <div class="text-sm text-gray-600">Investisseur individuel</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="font-bold text-sf-gold text-lg">50 000 €</div>
+                <div class="text-xs text-gray-600">Il y a 2 heures</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-semibold">
+                  FZ
+                </div>
+                <div>
+                  <div class="font-medium text-sf-dark">Fatima Z.</div>
+                  <div class="text-sm text-gray-600">Family Office</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="font-bold text-sf-gold text-lg">30 000 €</div>
+                <div class="text-xs text-gray-600">Il y a 5 heures</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-semibold">
+                  YB
+                </div>
+                <div>
+                  <div class="font-medium text-sf-dark">Youssef B.</div>
+                  <div class="text-sm text-gray-600">Institutionnel</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="font-bold text-sf-gold text-lg">45 000 €</div>
+                <div class="text-xs text-gray-600">Il y a 1 jour</div>
+              </div>
+            </div>
+
+            <button class="btn-ghost w-full">Voir tous les engagements (12) →</a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="lg:col-span-1 space-y-6">
+      <!-- Admin Actions -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <h2 class="font-semibold text-sf-dark">Actions admin</h2>
+        </header>
+        <section class="p-6 space-y-3">
+          <%= link_to mockups2_admin_project_validation_path(id: 1), class: "btn w-full bg-sf-green text-white" do %>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+            Valider le projet
+          <% end %>
+          
+          <button class="btn-destructive w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+            </svg>
+            Rejeter
+          </a>
+
+          <button class="btn-outline w-full">Demander modifications</a>
+        </section>
+      </div>
+
+      <!-- Project Info -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <h2 class="font-semibold text-sf-dark">Informations</h2>
+        </header>
+        <section class="p-6 space-y-4 text-sm">
+          <div>
+            <label class="text-gray-600">Créé le</label>
+            <p class="font-medium text-sf-dark">15 janvier 2024</p>
+          </div>
+          <div>
+            <label class="text-gray-600">Soumis le</label>
+            <p class="font-medium text-sf-dark">15 janvier 2024</p>
+          </div>
+          <div>
+            <label class="text-gray-600">Dernière mise à jour</label>
+            <p class="font-medium text-sf-dark">16 janvier 2024</p>
+          </div>
+          <div>
+            <label class="text-gray-600">ID Projet</label>
+            <p class="font-mono text-xs text-gray-700">#PROJ-2024-001</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Entrepreneur -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <h2 class="font-semibold text-sf-dark">Entrepreneur</h2>
+        </header>
+        <section class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-white font-bold">
+              AK
+            </div>
+            <div>
+              <div class="font-medium text-sf-dark">Ahmed Khalil</div>
+              <div class="text-sm text-gray-600">Entrepreneur</div>
+            </div>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <span class="text-gray-700">ahmed.k@example.com</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span class="text-gray-700">+33 6 12 34 56 78</span>
+            </div>
+          </div>
+          <button class="btn-outline w-full mt-4">Voir profil complet</a>
+        </section>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="card bg-gradient-to-br from-sf-gold-pale to-white rounded-lg border-2 border-sf-gold">
+        <section class="p-6">
+          <h3 class="font-semibold text-sf-dark mb-4">Performance</h3>
+          <div class="space-y-3">
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600">Taux de conversion</span>
+              <span class="font-bold text-sf-green">3.5%</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600">Engagement moyen</span>
+              <span class="font-bold text-sf-dark">2min 34s</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600">Taux d'engagement</span>
+              <span class="font-bold text-sf-gold">12 / 342</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

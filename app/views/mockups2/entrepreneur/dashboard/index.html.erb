@@ -1,0 +1,299 @@
+<% content_for :title, "Dashboard Entrepreneur - Sharifund" %>
+
+<div class="max-w-7xl">
+  <!-- Welcome Header -->
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-sf-dark mb-2">Bonjour Ahmed <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></h1>
+    <p class="text-lg text-gray-600">Voici l'état de vos projets</p>
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+    <div class="card bg-white p-6 rounded-lg border border-gray-200">
+      <div class="flex items-center justify-between mb-4">
+        <div class="text-4xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg></div>
+      </div>
+      <div class="text-3xl font-bold text-sf-dark mb-1">5</div>
+      <div class="text-sm text-gray-600">Projets actifs</div>
+      <div class="mt-4 flex gap-2 text-xs">
+        <span class="badge badge-success">3 validés</span>
+        <span class="badge badge-warning">2 en attente</span>
+      </div>
+    </div>
+
+    <div class="card bg-white p-6 rounded-lg border border-gray-200">
+      <div class="flex items-center justify-between mb-4">
+        <div class="text-4xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <span class="badge badge-outline text-xs">+15%</span>
+      </div>
+      <div class="text-3xl font-bold text-sf-dark mb-1">42</div>
+      <div class="text-sm text-gray-600">Engagements reçus</div>
+      <div class="mt-4">
+        <div class="text-xs text-gray-600">Total simulé: <strong class="text-sf-dark">850K€</strong></div>
+      </div>
+    </div>
+
+    <div class="card bg-white p-6 rounded-lg border border-gray-200">
+      <div class="flex items-center justify-between mb-4">
+        <div class="text-4xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      </div>
+      <div class="text-3xl font-bold text-sf-dark mb-1">1,247</div>
+      <div class="text-sm text-gray-600">Vues totales</div>
+      <div class="mt-4">
+        <div class="w-full bg-gray-200 rounded-full h-2">
+          <div class="bg-sf-blue h-2 rounded-full" style="width: 73%"></div>
+        </div>
+        <p class="text-xs text-gray-600 mt-1">Engagement: 73%</p>
+      </div>
+    </div>
+
+    <div class="card bg-white p-6 rounded-lg border border-gray-200">
+      <div class="flex items-center justify-between mb-4">
+        <div class="text-4xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+        <span class="badge badge-error text-xs">3 non lus</span>
+      </div>
+      <div class="text-3xl font-bold text-sf-dark mb-1">18</div>
+      <div class="text-sm text-gray-600">Messages</div>
+      <div class="mt-4">
+        <button class="btn-outline btn-sm w-full">Voir messages →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- My Projects -->
+    <div class="lg:col-span-2">
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold text-sf-dark">Mes projets</h2>
+            <%= link_to mockups2_entrepreneur_new_project_path, class: "btn bg-sf-gold text-sf-black" do %>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14"/><path d="M5 12h14"/>
+              </svg>
+              Nouveau projet
+            <% end %>
+          </div>
+        </header>
+        <section class="p-6">
+          <div class="space-y-4">
+            <!-- Project 1 - Validated -->
+            <div class="border border-gray-200 rounded-lg p-4 hover:border-sf-gold transition-all">
+              <div class="flex items-start gap-4">
+                <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-2xl flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-start justify-between mb-2">
+                    <div>
+                      <h3 class="font-semibold text-sf-dark mb-1">Restaurant halal Paris 15ème</h3>
+                      <p class="text-sm text-gray-600">Mudaraba • 150 000 €</p>
+                    </div>
+                    <span class="badge badge-success text-xs">Validé ✓</span>
+                  </div>
+                  
+                  <div class="flex items-center gap-4 mt-3">
+                    <div class="flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-500">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                      </svg>
+                      <span class="text-sm text-gray-600">342 vues</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sf-gold">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                      </svg>
+                      <span class="text-sm font-medium text-sf-dark">12 engagements</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-3">
+                    <div class="flex justify-between text-xs mb-1">
+                      <span class="text-gray-600">Financement simulé</span>
+                      <span class="font-semibold text-sf-dark">125 000 € (83%)</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div class="bg-gradient-to-r from-sf-gold to-sf-gold-light h-2 rounded-full" style="width: 83%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2 - Pending -->
+            <div class="border border-yellow-300 rounded-lg p-4 bg-yellow-50">
+              <div class="flex items-start gap-4">
+                <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-2xl flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-start justify-between mb-2">
+                    <div>
+                      <h3 class="font-semibold text-sf-dark mb-1">E-commerce alimentaire halal</h3>
+                      <p class="text-sm text-gray-600">Musharaka • 80 000 €</p>
+                    </div>
+                    <span class="badge badge-warning text-xs">En validation <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg></span>
+                  </div>
+                  
+                  <div class="mt-3 p-3 bg-white rounded-lg border border-yellow-200">
+                    <p class="text-sm text-yellow-900 font-medium mb-1">Analyse IA en cours...</p>
+                    <div class="w-full bg-yellow-200 rounded-full h-2">
+                      <div class="bg-yellow-500 h-2 rounded-full animate-pulse" style="width: 65%"></div>
+                    </div>
+                    <p class="text-xs text-yellow-700 mt-2">Votre projet est en cours d'analyse par notre IA. Résultat sous 24h.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3 - Draft -->
+            <div class="border border-gray-200 rounded-lg p-4 opacity-75">
+              <div class="flex items-start gap-4">
+                <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-2xl flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-start justify-between mb-2">
+                    <div>
+                      <h3 class="font-semibold text-sf-dark mb-1">Application mobile marketplace</h3>
+                      <p class="text-sm text-gray-600">Brouillon non soumis</p>
+                    </div>
+                    <span class="badge badge-outline text-xs">Brouillon</span>
+                  </div>
+                  
+                  <div class="flex gap-2 mt-3">
+                    <button class="btn-outline btn-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                      </svg>
+                      Continuer l'édition
+                    </a>
+                    <a href="#" class="btn btn-sm bg-sf-gold text-sf-black">Soumettre</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="p-6 border-t border-gray-200">
+          <%= link_to mockups2_entrepreneur_projects_path, class: "btn-ghost w-full" do %>
+            Voir tous mes projets →
+          <% end %>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="lg:col-span-1 space-y-6">
+      <!-- Recent Interests -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <h2 class="font-semibold text-sf-dark">Engagements récents</h2>
+        </header>
+        <section class="p-6">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold">
+                MH
+              </div>
+              <div class="flex-1">
+                <p class="text-sm font-medium text-sf-dark">Mohammed H.</p>
+                <p class="text-xs text-gray-600">50 000 € • Il y a 2h</p>
+              </div>
+              <span class="text-sf-gold"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-semibold">
+                FZ
+              </div>
+              <div class="flex-1">
+                <p class="text-sm font-medium text-sf-dark">Fatima Z.</p>
+                <p class="text-xs text-gray-600">30 000 € • Il y a 5h</p>
+              </div>
+              <span class="text-sf-gold"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-semibold">
+                YB
+              </div>
+              <div class="flex-1">
+                <p class="text-sm font-medium text-sf-dark">Youssef B.</p>
+                <p class="text-xs text-gray-600">45 000 € • Il y a 1j</p>
+              </div>
+              <span class="text-sf-gold"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            </div>
+          </div>
+        </section>
+        <footer class="p-6 border-t border-gray-200">
+          <button class="btn-ghost btn-sm w-full">Voir tous les engagements →</a>
+        </footer>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="card bg-gradient-to-br from-sf-gold-pale to-white rounded-lg border-2 border-sf-gold">
+        <header class="p-6">
+          <h2 class="font-semibold text-sf-dark flex items-center gap-2">
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+            <span>Prochaines étapes</span>
+          </h2>
+        </header>
+        <section class="px-6 pb-6">
+          <div class="space-y-3">
+            <div class="flex items-start gap-2">
+              <div class="w-5 h-5 rounded-full bg-sf-gold flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">1</div>
+              <div>
+                <p class="text-sm font-medium text-sf-dark">Compléter votre profil</p>
+                <p class="text-xs text-gray-600">Ajoutez plus d'informations sur votre entreprise</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-2">
+              <div class="w-5 h-5 rounded-full bg-sf-gold flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">2</div>
+              <div>
+                <p class="text-sm font-medium text-sf-dark">Soumettre projet en attente</p>
+                <p class="text-xs text-gray-600">Finalisez votre projet e-commerce</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-2 opacity-50">
+              <div class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">3</div>
+              <div>
+                <p class="text-sm font-medium text-sf-dark">Répondre aux investisseurs</p>
+                <p class="text-xs text-gray-600">3 messages en attente</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <h2 class="font-semibold text-sf-dark">Actions rapides</h2>
+        </header>
+        <section class="p-6 space-y-2">
+          <button class="btn-outline w-full justify-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 5v14"/><path d="M5 12h14"/>
+            </svg>
+            Créer un projet
+          </a>
+          <button class="btn-outline w-full justify-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" x2="12" y1="3" y2="15"/>
+            </svg>
+            Uploader documents
+          </a>
+          <button class="btn-outline w-full justify-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+            </svg>
+            Modifier profil
+          </a>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

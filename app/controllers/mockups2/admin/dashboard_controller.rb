@@ -1,0 +1,8 @@
+module Mockups2
+  module Admin
+    class DashboardController < BaseController
+      def index
+      end
+    end
+  end
+end

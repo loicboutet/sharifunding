@@ -1,0 +1,466 @@
+<% content_for :title, "Explorer les Projets - Investisseur - Sharifund" %>
+
+<div class="max-w-7xl">
+  <!-- Page Header -->
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-sf-dark mb-2">Explorer les projets</h1>
+    <p class="text-lg text-gray-600">34 projets conformes à la finance islamique</p>
+  </div>
+
+  <!-- Search and Filters -->
+  <div class="card bg-white rounded-lg border border-gray-200 p-6 mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+      <div class="md:col-span-2">
+        <label class="label text-sm font-medium mb-2">Rechercher</label>
+        <div class="relative">
+          <input type="text" class="input w-full pl-10" placeholder="Nom du projet, secteur...">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+        </div>
+      </div>
+      
+      <div>
+        <label class="label text-sm font-medium mb-2">Type de contrat</label>
+        <select class="select w-full">
+          <option>Tous les types</option>
+          <option>Mudaraba</option>
+          <option>Musharaka</option>
+          <option>Murabaha</option>
+        </select>
+      </div>
+      
+      <div>
+        <label class="label text-sm font-medium mb-2">Secteur</label>
+        <select class="select w-full">
+          <option>Tous les secteurs</option>
+          <option><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg> Restauration</option>
+          <option><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> Technologie</option>
+          <option><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Immobilier</option>
+          <option><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Commerce</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-3">
+      <label class="label text-sm font-medium">Montant:</label>
+      <input type="range" class="flex-1" min="0" max="1000000" value="500000">
+      <span class="text-sm font-medium text-sf-dark min-w-[100px]">0 € - 500K €</span>
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Project Card 1 - Featured -->
+    <div class="card bg-white rounded-lg border-2 border-sf-gold overflow-hidden group">
+      <div class="relative">
+        <div class="w-full h-48 bg-gradient-to-br from-yellow-200 via-yellow-100 to-yellow-50 flex items-center justify-center text-6xl">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+        </div>
+        <div class="absolute top-3 right-3">
+          <span class="conformite-badge text-xs">
+            <span>☪</span>
+            <span>Score: 92%</span>
+          </span>
+        </div>
+        <div class="absolute top-3 left-3">
+          <span class="badge bg-white text-sf-dark text-xs shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Recommandé</span>
+        </div>
+      </div>
+      
+      <div class="p-6">
+        <div class="mb-3">
+          <h3 class="text-lg font-bold text-sf-dark mb-2 group-hover:text-sf-gold transition-colors">Restaurant halal Paris 15ème</h3>
+          <p class="text-sm text-gray-600 line-clamp-2">
+            Restaurant gastronomique halal certifié, concept unique mêlant tradition et modernité. 60 couverts + terrasse.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2 mb-4">
+          <span class="badge bg-purple-100 text-purple-800 text-xs">Mudaraba</span>
+          <span class="badge bg-orange-100 text-orange-800 text-xs">Restauration</span>
+        </div>
+
+        <div class="space-y-3 mb-4">
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Objectif</span>
+            <span class="font-bold text-sf-dark">150 000 €</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Engagements</span>
+            <span class="font-semibold text-sf-gold">12 investisseurs</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Durée</span>
+            <span class="font-medium text-gray-700">24 mois</span>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between text-xs mb-1">
+            <span class="text-gray-600">Financement simulé</span>
+            <span class="font-semibold text-sf-dark">125K € (83%)</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-gradient-to-r from-sf-gold to-sf-gold-light h-2 rounded-full" style="width: 83%"></div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <a href="#" class="btn flex-1 bg-sf-gold text-sf-black hover:bg-sf-gold-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+            Intéressé
+          </a>
+          <button class="btn-outline flex-1">Détails →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Card 2 -->
+    <div class="card bg-white rounded-lg border border-gray-200 overflow-hidden group hover:border-sf-gold transition-all">
+      <div class="relative">
+        <div class="w-full h-48 bg-gradient-to-br from-blue-200 via-blue-100 to-blue-50 flex items-center justify-center text-6xl">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div class="absolute top-3 right-3">
+          <span class="conformite-badge text-xs">
+            <span>☪</span>
+            <span>Score: 95%</span>
+          </span>
+        </div>
+      </div>
+      
+      <div class="p-6">
+        <div class="mb-3">
+          <h3 class="text-lg font-bold text-sf-dark mb-2 group-hover:text-sf-gold transition-colors">Startup Tech Education</h3>
+          <p class="text-sm text-gray-600 line-clamp-2">
+            Plateforme d'apprentissage en ligne pour l'éducation islamique et professionnelle.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2 mb-4">
+          <span class="badge bg-blue-100 text-blue-800 text-xs">Musharaka</span>
+          <span class="badge bg-purple-100 text-purple-800 text-xs">Tech</span>
+        </div>
+
+        <div class="space-y-3 mb-4">
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Objectif</span>
+            <span class="font-bold text-sf-dark">300 000 €</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Engagements</span>
+            <span class="font-semibold text-sf-gold">8 investisseurs</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Durée</span>
+            <span class="font-medium text-gray-700">36 mois</span>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between text-xs mb-1">
+            <span class="text-gray-600">Financement simulé</span>
+            <span class="font-semibold text-sf-dark">180K € (60%)</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-gradient-to-r from-sf-gold to-sf-gold-light h-2 rounded-full" style="width: 60%"></div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <a href="#" class="btn flex-1 bg-sf-gold text-sf-black hover:bg-sf-gold-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+            Intéressé
+          </a>
+          <button class="btn-outline flex-1">Détails →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Card 3 -->
+    <div class="card bg-white rounded-lg border border-gray-200 overflow-hidden group hover:border-sf-gold transition-all">
+      <div class="relative">
+        <div class="w-full h-48 bg-gradient-to-br from-green-200 via-green-100 to-green-50 flex items-center justify-center text-6xl">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="absolute top-3 right-3">
+          <span class="conformite-badge text-xs">
+            <span>☪</span>
+            <span>Score: 88%</span>
+          </span>
+        </div>
+      </div>
+      
+      <div class="p-6">
+        <div class="mb-3">
+          <h3 class="text-lg font-bold text-sf-dark mb-2 group-hover:text-sf-gold transition-colors">Immobilier résidentiel Nantes</h3>
+          <p class="text-sm text-gray-600 line-clamp-2">
+            Projet de construction de logements conformes à l'éthique islamique avec espaces communautaires.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2 mb-4">
+          <span class="badge bg-green-100 text-green-800 text-xs">Murabaha</span>
+          <span class="badge bg-blue-100 text-blue-800 text-xs">Immobilier</span>
+        </div>
+
+        <div class="space-y-3 mb-4">
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Objectif</span>
+            <span class="font-bold text-sf-dark">500 000 €</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Engagements</span>
+            <span class="font-semibold text-sf-gold">15 investisseurs</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Durée</span>
+            <span class="font-medium text-gray-700">48 mois</span>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between text-xs mb-1">
+            <span class="text-gray-600">Financement simulé</span>
+            <span class="font-semibold text-sf-dark">325K € (65%)</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-gradient-to-r from-sf-gold to-sf-gold-light h-2 rounded-full" style="width: 65%"></div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <a href="#" class="btn flex-1 bg-sf-gold text-sf-black hover:bg-sf-gold-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+            Intéressé
+          </a>
+          <button class="btn-outline flex-1">Détails →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Card 4 -->
+    <div class="card bg-white rounded-lg border border-gray-200 overflow-hidden group hover:border-sf-gold transition-all">
+      <div class="relative">
+        <div class="w-full h-48 bg-gradient-to-br from-pink-200 via-pink-100 to-pink-50 flex items-center justify-center text-6xl">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <div class="absolute top-3 right-3">
+          <span class="conformite-badge text-xs">
+            <span>☪</span>
+            <span>Score: 96%</span>
+          </span>
+        </div>
+      </div>
+      
+      <div class="p-6">
+        <div class="mb-3">
+          <h3 class="text-lg font-bold text-sf-dark mb-2 group-hover:text-sf-gold transition-colors">E-commerce mode modeste</h3>
+          <p class="text-sm text-gray-600 line-clamp-2">
+            Boutique en ligne de vêtements conformes aux principes de pudeur islamique.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2 mb-4">
+          <span class="badge bg-purple-100 text-purple-800 text-xs">Mudaraba</span>
+          <span class="badge bg-pink-100 text-pink-800 text-xs">Commerce</span>
+        </div>
+
+        <div class="space-y-3 mb-4">
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Objectif</span>
+            <span class="font-bold text-sf-dark">75 000 €</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Engagements</span>
+            <span class="font-semibold text-sf-gold">22 investisseurs</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Durée</span>
+            <span class="font-medium text-gray-700">18 mois</span>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between text-xs mb-1">
+            <span class="text-gray-600">Financement simulé</span>
+            <span class="font-semibold text-sf-green">75K € (100%)</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-gradient-to-r from-sf-green to-green-400 h-2 rounded-full" style="width: 100%"></div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <a href="#" class="btn flex-1 bg-sf-gold text-sf-black hover:bg-sf-gold-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+            Intéressé
+          </a>
+          <button class="btn-outline flex-1">Détails →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Card 5 - Already interested -->
+    <div class="card bg-white rounded-lg border border-gray-200 overflow-hidden group hover:border-sf-gold transition-all">
+      <div class="relative">
+        <div class="w-full h-48 bg-gradient-to-br from-orange-200 via-orange-100 to-orange-50 flex items-center justify-center text-6xl">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"/></svg>
+        </div>
+        <div class="absolute top-3 right-3">
+          <span class="conformite-badge text-xs">
+            <span>☪</span>
+            <span>Score: 94%</span>
+          </span>
+        </div>
+        <div class="absolute top-3 left-3">
+          <span class="badge bg-sf-green text-white text-xs shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+            Vous suivez
+          </span>
+        </div>
+      </div>
+      
+      <div class="p-6">
+        <div class="mb-3">
+          <h3 class="text-lg font-bold text-sf-dark mb-2 group-hover:text-sf-gold transition-colors">Clinique dentaire moderne</h3>
+          <p class="text-sm text-gray-600 line-clamp-2">
+            Cabinet dentaire équipé des dernières technologies, approche éthique et accessible.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2 mb-4">
+          <span class="badge bg-green-100 text-green-800 text-xs">Murabaha</span>
+          <span class="badge bg-red-100 text-red-800 text-xs">Santé</span>
+        </div>
+
+        <div class="space-y-3 mb-4">
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Objectif</span>
+            <span class="font-bold text-sf-dark">250 000 €</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Engagements</span>
+            <span class="font-semibold text-sf-gold">18 investisseurs</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Votre engagement</span>
+            <span class="font-bold text-sf-green">50 000 €</span>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between text-xs mb-1">
+            <span class="text-gray-600">Financement simulé</span>
+            <span class="font-semibold text-sf-dark">215K € (86%)</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-gradient-to-r from-sf-gold to-sf-gold-light h-2 rounded-full" style="width: 86%"></div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <button class="btn-outline flex-1 text-red-600 border-red-600 hover:bg-red-50">
+            Retirer engagement
+          </a>
+          <button class="btn-outline flex-1">Détails →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Card 6 -->
+    <div class="card bg-white rounded-lg border border-gray-200 overflow-hidden group hover:border-sf-gold transition-all">
+      <div class="relative">
+        <div class="w-full h-48 bg-gradient-to-br from-teal-200 via-teal-100 to-teal-50 flex items-center justify-center text-6xl">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+        </div>
+        <div class="absolute top-3 right-3">
+          <span class="conformite-badge text-xs">
+            <span>☪</span>
+            <span>Score: 91%</span>
+          </span>
+        </div>
+      </div>
+      
+      <div class="p-6">
+        <div class="mb-3">
+          <h3 class="text-lg font-bold text-sf-dark mb-2 group-hover:text-sf-gold transition-colors">Service VTC premium halal</h3>
+          <p class="text-sm text-gray-600 line-clamp-2">
+            Flotte de véhicules premium pour transport respectueux des principes islamiques.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2 mb-4">
+          <span class="badge bg-blue-100 text-blue-800 text-xs">Musharaka</span>
+          <span class="badge bg-teal-100 text-teal-800 text-xs">Transport</span>
+        </div>
+
+        <div class="space-y-3 mb-4">
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Objectif</span>
+            <span class="font-bold text-sf-dark">200 000 €</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Engagements</span>
+            <span class="font-semibold text-sf-gold">10 investisseurs</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-600">Durée</span>
+            <span class="font-medium text-gray-700">30 mois</span>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between text-xs mb-1">
+            <span class="text-gray-600">Financement simulé</span>
+            <span class="font-semibold text-sf-dark">120K € (60%)</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-gradient-to-r from-sf-gold to-sf-gold-light h-2 rounded-full" style="width: 60%"></div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <a href="#" class="btn flex-1 bg-sf-gold text-sf-black hover:bg-sf-gold-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+            Intéressé
+          </a>
+          <button class="btn-outline flex-1">Détails →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <nav role="navigation" aria-label="pagination" class="mt-8 flex items-center justify-center">
+    <ul class="flex items-center gap-1">
+      <li><button class="btn-ghost btn-sm" disabled>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+        Précédent
+      </a></li>
+      <li><button class="btn-icon-outline btn-sm">1</a></li>
+      <li><button class="btn-icon-ghost btn-sm">2</a></li>
+      <li><button class="btn-icon-ghost btn-sm">3</a></li>
+      <li><span class="px-2 text-gray-400">...</span></li>
+      <li><button class="btn-icon-ghost btn-sm">12</a></li>
+      <li><button class="btn-ghost btn-sm">
+        Suivant
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a></li>
+    </ul>
+  </nav>
+</div>

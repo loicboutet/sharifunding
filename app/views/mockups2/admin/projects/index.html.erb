@@ -1,0 +1,366 @@
+<% content_for :title, "Projets - Admin - Sharifund" %>
+
+<div class="max-w-7xl">
+  <!-- Page Header -->
+  <div class="mb-8 flex items-center justify-between">
+    <div>
+      <h1 class="text-4xl font-bold text-sf-dark mb-2">Tous les projets</h1>
+      <p class="text-lg text-gray-600">67 projets au total</p>
+    </div>
+    <div class="flex gap-3">
+      <button class="btn-outline">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></svg>
+        Filtres
+      </a>
+      <button class="btn-outline">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+        Exporter
+      </a>
+    </div>
+  </div>
+
+  <!-- Filters Bar -->
+  <div class="card bg-white rounded-lg border border-gray-200 p-6 mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div>
+        <label class="label text-sm font-medium mb-2">Statut</label>
+        <select class="select w-full">
+          <option>Tous les statuts</option>
+          <option>En attente validation</option>
+          <option>Validés</option>
+          <option>Rejetés</option>
+          <option>Financés</option>
+        </select>
+      </div>
+      <div>
+        <label class="label text-sm font-medium mb-2">Type de contrat</label>
+        <select class="select w-full">
+          <option>Tous les types</option>
+          <option>Mudaraba</option>
+          <option>Musharaka</option>
+          <option>Murabaha</option>
+        </select>
+      </div>
+      <div>
+        <label class="label text-sm font-medium mb-2">Secteur</label>
+        <select class="select w-full">
+          <option>Tous les secteurs</option>
+          <option>Restauration</option>
+          <option>Tech</option>
+          <option>Immobilier</option>
+          <option>Commerce</option>
+        </select>
+      </div>
+      <div>
+        <label class="label text-sm font-medium mb-2">Recherche</label>
+        <input type="text" class="input w-full" placeholder="Rechercher...">
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects Table -->
+  <div class="card bg-white rounded-lg border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="table w-full">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-6 py-4 text-left text-sm font-semibold text-sf-dark">Projet</th>
+            <th class="px-6 py-4 text-left text-sm font-semibold text-sf-dark">Entrepreneur</th>
+            <th class="px-6 py-4 text-left text-sm font-semibold text-sf-dark">Montant</th>
+            <th class="px-6 py-4 text-left text-sm font-semibold text-sf-dark">Type</th>
+            <th class="px-6 py-4 text-left text-sm font-semibold text-sf-dark">Score IA</th>
+            <th class="px-6 py-4 text-left text-sm font-semibold text-sf-dark">Statut</th>
+            <th class="px-6 py-4 text-center text-sm font-semibold text-sf-dark">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <!-- Project 1 -->
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+                <div>
+                  <div class="font-semibold text-sf-dark">Restaurant halal Paris 15ème</div>
+                  <div class="text-sm text-gray-600">Restauration</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <div class="text-sm text-sf-dark">Ahmed K.</div>
+              <div class="text-xs text-gray-600">ahmed@example.com</div>
+            </td>
+            <td class="px-6 py-4">
+              <div class="font-semibold text-sf-dark">150 000 €</div>
+              <div class="text-xs text-gray-600">12 engagements</div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="badge bg-purple-100 text-purple-800 text-xs">Mudaraba</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-2">
+                <div class="w-full bg-gray-200 rounded-full h-2 max-w-[80px]">
+                  <div class="bg-sf-green h-2 rounded-full" style="width: 92%"></div>
+                </div>
+                <span class="text-sm font-semibold text-sf-green">92%</span>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="badge badge-warning text-xs">En attente</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center justify-center gap-2">
+                <button class="btn-icon-outline btn-sm" data-tooltip="Voir détails">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </a>
+                <button class="btn-icon-outline btn-sm bg-sf-green text-white border-sf-green" data-tooltip="Valider">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+                </a>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Project 2 -->
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+                <div>
+                  <div class="font-semibold text-sf-dark">Startup Tech Education</div>
+                  <div class="text-sm text-gray-600">Technologie</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <div class="text-sm text-sf-dark">Sarah M.</div>
+              <div class="text-xs text-gray-600">sarah@techco.fr</div>
+            </td>
+            <td class="px-6 py-4">
+              <div class="font-semibold text-sf-dark">300 000 €</div>
+              <div class="text-xs text-gray-600">8 engagements</div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="badge bg-blue-100 text-blue-800 text-xs">Musharaka</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-2">
+                <div class="w-full bg-gray-200 rounded-full h-2 max-w-[80px]">
+                  <div class="bg-sf-green h-2 rounded-full" style="width: 95%"></div>
+                </div>
+                <span class="text-sm font-semibold text-sf-green">95%</span>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="badge badge-success text-xs">Validé</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center justify-center gap-2">
+                <button class="btn-icon-outline btn-sm" data-tooltip="Voir détails">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </a>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Project 3 -->
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center text-xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                <div>
+                  <div class="font-semibold text-sf-dark">Immobilier Nantes</div>
+                  <div class="text-sm text-gray-600">Immobilier</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <div class="text-sm text-sf-dark">Mohammed B.</div>
+              <div class="text-xs text-gray-600">mohammed@immo.fr</div>
+            </td>
+            <td class="px-6 py-4">
+              <div class="font-semibold text-sf-dark">500 000 €</div>
+              <div class="text-xs text-gray-600">15 engagements</div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="badge bg-green-100 text-green-800 text-xs">Murabaha</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-2">
+                <div class="w-full bg-gray-200 rounded-full h-2 max-w-[80px]">
+                  <div class="bg-sf-green h-2 rounded-full" style="width: 88%"></div>
+                </div>
+                <span class="text-sm font-semibold text-sf-green">88%</span>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="badge badge-warning text-xs">Analyse IA</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center justify-center gap-2">
+                <button class="btn-icon-outline btn-sm" data-tooltip="Voir détails">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </a>
+                <button class="btn-icon-outline btn-sm bg-sf-green text-white border-sf-green" data-tooltip="Valider">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+                </a>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Project 4 - Validé -->
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-100 to-pink-200 flex items-center justify-center text-xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+                <div>
+                  <div class="font-semibold text-sf-dark">E-commerce mode modeste</div>
+                  <div class="text-sm text-gray-600">Commerce</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <div class="text-sm text-sf-dark">Fatima Z.</div>
+              <div class="text-xs text-gray-600">fatima@modemodeste.fr</div>
+            </td>
+            <td class="px-6 py-4">
+              <div class="font-semibold text-sf-dark">75 000 €</div>
+              <div class="text-xs text-gray-600">22 engagements</div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="badge bg-purple-100 text-purple-800 text-xs">Mudaraba</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-2">
+                <div class="w-full bg-gray-200 rounded-full h-2 max-w-[80px]">
+                  <div class="bg-sf-green h-2 rounded-full" style="width: 96%"></div>
+                </div>
+                <span class="text-sm font-semibold text-sf-green">96%</span>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="badge badge-success text-xs">Validé ✓</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center justify-center gap-2">
+                <button class="btn-icon-outline btn-sm" data-tooltip="Voir détails">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </a>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Project 5 - Rejeté -->
+          <tr class="hover:bg-gray-50 transition-colors opacity-60">
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center text-xl">🎮</div>
+                <div>
+                  <div class="font-semibold text-sf-dark">Gaming Platform</div>
+                  <div class="text-sm text-gray-600">Technologie</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <div class="text-sm text-sf-dark">Omar L.</div>
+              <div class="text-xs text-gray-600">omar@gaming.fr</div>
+            </td>
+            <td class="px-6 py-4">
+              <div class="font-semibold text-sf-dark">200 000 €</div>
+              <div class="text-xs text-gray-600">0 engagements</div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="badge bg-blue-100 text-blue-800 text-xs">Musharaka</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-2">
+                <div class="w-full bg-gray-200 rounded-full h-2 max-w-[80px]">
+                  <div class="bg-red-500 h-2 rounded-full" style="width: 35%"></div>
+                </div>
+                <span class="text-sm font-semibold text-red-500">35%</span>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="badge badge-destructive text-xs">Rejeté ✕</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center justify-center gap-2">
+                <button class="btn-icon-outline btn-sm" data-tooltip="Voir détails">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </a>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Project 6 -->
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center text-xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"/></svg></div>
+                <div>
+                  <div class="font-semibold text-sf-dark">Clinique Dentaire</div>
+                  <div class="text-sm text-gray-600">Santé</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <div class="text-sm text-sf-dark">Dr. Karim H.</div>
+              <div class="text-xs text-gray-600">karim@dentiste.fr</div>
+            </td>
+            <td class="px-6 py-4">
+              <div class="font-semibold text-sf-dark">250 000 €</div>
+              <div class="text-xs text-gray-600">18 engagements</div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="badge bg-green-100 text-green-800 text-xs">Murabaha</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-2">
+                <div class="w-full bg-gray-200 rounded-full h-2 max-w-[80px]">
+                  <div class="bg-sf-green h-2 rounded-full" style="width: 94%"></div>
+                </div>
+                <span class="text-sm font-semibold text-sf-green">94%</span>
+              </div>
+            </td>
+            <td class="px-6 py-4">
+              <span class="badge badge-success text-xs">Validé ✓</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center justify-center gap-2">
+                <button class="btn-icon-outline btn-sm" data-tooltip="Voir détails">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <footer class="p-6 border-t border-gray-200">
+      <nav role="navigation" aria-label="pagination" class="flex items-center justify-between">
+        <div class="text-sm text-gray-600">
+          Affichage de <strong>1-20</strong> sur <strong>67</strong> projets
+        </div>
+        <ul class="flex items-center gap-1">
+          <li>
+            <button class="btn-ghost btn-sm" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+              Précédent
+            </a>
+          </li>
+          <li><button class="btn-icon-outline btn-sm">1</a></li>
+          <li><button class="btn-icon-ghost btn-sm">2</a></li>
+          <li><button class="btn-icon-ghost btn-sm">3</a></li>
+          <li><span class="px-2">...</span></li>
+          <li><button class="btn-icon-ghost btn-sm">7</a></li>
+          <li>
+            <button class="btn-ghost btn-sm">
+              Suivant
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+</div>

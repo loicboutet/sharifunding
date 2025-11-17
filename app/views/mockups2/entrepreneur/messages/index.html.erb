@@ -1,0 +1,165 @@
+<% content_for :title, "Messages - Entrepreneur - Sharifund" %>
+
+<div class="max-w-7xl">
+  <h1 class="text-4xl font-bold text-sf-dark mb-8">Messages</h1>
+
+  <div class="card bg-white rounded-lg border border-gray-200 overflow-hidden" style="height: calc(100vh - 240px);">
+    <div class="grid grid-cols-3 h-full">
+      <!-- Conversations List -->
+      <div class="col-span-1 border-r border-gray-200 overflow-y-auto">
+        <div class="p-4 border-b border-gray-200 bg-gray-50">
+          <input type="text" class="input w-full" placeholder="Rechercher...">
+        </div>
+        
+        <div class="divide-y divide-gray-200">
+          <!-- Conversation 1 - Unread -->
+          <div class="p-4 hover:bg-gray-50 cursor-pointer bg-blue-50 border-l-4 border-sf-gold">
+            <div class="flex items-start gap-3">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold flex-shrink-0">
+                MH
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between mb-1">
+                  <div class="font-semibold text-sf-dark truncate">Mohammed H.</div>
+                  <span class="badge badge-error text-xs flex-shrink-0 ml-2">Nouveau</span>
+                </div>
+                <p class="text-sm text-gray-600 truncate">Je suis très intéressé par votre projet...</p>
+                <div class="flex items-center gap-2 mt-2">
+                  <span class="text-xs text-gray-500">Il y a 2h</span>
+                  <span class="text-xs text-sf-gold">• Restaurant Paris</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conversation 2 -->
+          <div class="p-4 hover:bg-gray-50 cursor-pointer">
+            <div class="flex items-start gap-3">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-semibold flex-shrink-0">
+                FZ
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between mb-1">
+                  <div class="font-medium text-sf-dark truncate">Fatima Z.</div>
+                </div>
+                <p class="text-sm text-gray-600 truncate">Merci pour ces précisions...</p>
+                <div class="flex items-center gap-2 mt-2">
+                  <span class="text-xs text-gray-500">Il y a 1j</span>
+                  <span class="text-xs text-gray-400">• E-commerce</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conversation 3 -->
+          <div class="p-4 hover:bg-gray-50 cursor-pointer">
+            <div class="flex items-start gap-3">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-semibold flex-shrink-0">
+                YB
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between mb-1">
+                  <div class="font-medium text-sf-dark truncate">Youssef B.</div>
+                </div>
+                <p class="text-sm text-gray-600 truncate">Pouvez-vous m'envoyer le business plan?</p>
+                <div class="flex items-center gap-2 mt-2">
+                  <span class="text-xs text-gray-500">Il y a 2j</span>
+                  <span class="text-xs text-gray-400">• Restaurant Paris</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message Thread -->
+      <div class="col-span-2 flex flex-col">
+        <!-- Thread Header -->
+        <div class="p-6 border-b border-gray-200 bg-gray-50">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold">
+                MH
+              </div>
+              <div>
+                <div class="font-semibold text-sf-dark">Mohammed H.</div>
+                <div class="text-sm text-gray-600">À propos de: Restaurant halal Paris 15ème</div>
+              </div>
+            </div>
+            <button class="btn-icon-outline">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="1"/>
+                <circle cx="12" cy="5" r="1"/>
+                <circle cx="12" cy="19" r="1"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Messages -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-4">
+          <!-- Message from investor -->
+          <div class="flex gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold flex-shrink-0">
+              MH
+            </div>
+            <div class="flex-1">
+              <div class="bg-gray-100 rounded-lg p-4 max-w-lg">
+                <p class="text-sm text-gray-900 mb-2">
+                  Bonjour, je suis très intéressé par votre projet de restaurant halal. 
+                  Pourriez-vous me donner plus de détails sur votre expérience dans la restauration?
+                </p>
+                <p class="text-xs text-gray-500">Il y a 3 heures</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message from entrepreneur (me) -->
+          <div class="flex gap-3 justify-end">
+            <div class="flex-1 flex justify-end">
+              <div class="bg-gradient-to-br from-sf-gold to-sf-gold-light rounded-lg p-4 max-w-lg">
+                <p class="text-sm text-sf-dark mb-2">
+                  Bonjour Mohammed, merci pour votre engagement! J'ai 15 ans d'expérience en restauration, 
+                  dont 8 ans comme chef dans des établissements étoilés. Je vous envoie mon CV par email.
+                </p>
+                <p class="text-xs text-gray-700">Il y a 2 heures</p>
+              </div>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-white font-semibold flex-shrink-0">
+              AK
+            </div>
+          </div>
+
+          <!-- Message from investor -->
+          <div class="flex gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold flex-shrink-0">
+              MH
+            </div>
+            <div class="flex-1">
+              <div class="bg-gray-100 rounded-lg p-4 max-w-lg">
+                <p class="text-sm text-gray-900 mb-2">
+                  Parfait! Votre parcours est impressionnant. Je souhaiterais investir 50 000€. 
+                  Quand pouvons-nous organiser une rencontre?
+                </p>
+                <p class="text-xs text-gray-500">Il y a 2 heures</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Message Input -->
+        <div class="p-6 border-t border-gray-200 bg-gray-50">
+          <form class="flex gap-3">
+            <textarea rows="2" class="textarea flex-1" placeholder="Écrire un message..."></textarea>
+            <button type="submit" class="btn bg-sf-gold text-sf-black hover:bg-sf-gold-light self-end">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/>
+              </svg>
+              Envoyer
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

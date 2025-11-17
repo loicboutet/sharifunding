@@ -1,0 +1,345 @@
+<% content_for :title, "Dashboard Admin - Sharifund" %>
+
+<div class="max-w-7xl">
+  <!-- Page Header -->
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-sf-dark mb-2">Dashboard Administrateur</h1>
+    <p class="text-lg text-gray-600">Vue d'ensemble de la plateforme</p>
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+    <!-- Total Users -->
+    <div class="card bg-white p-6 rounded-lg border border-gray-200">
+      <div class="flex items-center justify-between mb-4">
+        <div class="text-4xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <span class="badge badge-outline text-xs">+12%</span>
+      </div>
+      <div class="text-3xl font-bold text-sf-dark mb-1">248</div>
+      <div class="text-sm text-gray-600">Utilisateurs actifs</div>
+      <div class="mt-4 flex gap-2 text-xs">
+        <span class="badge bg-sf-gold-pale text-sf-dark">89 investisseurs</span>
+        <span class="badge bg-sf-gold-pale text-sf-dark">42 entrepreneurs</span>
+      </div>
+    </div>
+
+    <!-- Total Projects -->
+    <div class="card bg-white p-6 rounded-lg border border-gray-200">
+      <div class="flex items-center justify-between mb-4">
+        <div class="text-4xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg></div>
+        <span class="badge badge-success text-xs">+8</span>
+      </div>
+      <div class="text-3xl font-bold text-sf-dark mb-1">67</div>
+      <div class="text-sm text-gray-600">Projets total</div>
+      <div class="mt-4 flex gap-2 text-xs">
+        <span class="badge badge-success">34 validés</span>
+        <span class="badge badge-warning">3 en attente</span>
+      </div>
+    </div>
+
+    <!-- Total Funding -->
+    <div class="card bg-white p-6 rounded-lg border border-gray-200">
+      <div class="flex items-center justify-between mb-4">
+        <div class="text-4xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <span class="badge badge-outline text-xs">+24%</span>
+      </div>
+      <div class="text-3xl font-bold text-sf-dark mb-1">2.4M€</div>
+      <div class="text-sm text-gray-600">Montant simulé</div>
+      <div class="mt-4">
+        <div class="w-full bg-gray-200 rounded-full h-2">
+          <div class="bg-sf-gold h-2 rounded-full" style="width: 68%"></div>
+        </div>
+        <p class="text-xs text-gray-600 mt-1">68% d'engagement moyen</p>
+      </div>
+    </div>
+
+    <!-- Pending Validations -->
+    <div class="card bg-white p-6 rounded-lg border border-gray-200">
+      <div class="flex items-center justify-between mb-4">
+        <div class="text-4xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg></div>
+        <span class="badge badge-error text-xs">Action requise</span>
+      </div>
+      <div class="text-3xl font-bold text-sf-dark mb-1">5</div>
+      <div class="text-sm text-gray-600">En attente validation</div>
+      <div class="mt-4">
+        <button class="btn btn-outline w-full text-sm">Voir les projets →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+    <!-- Pending Projects -->
+    <div class="lg:col-span-2">
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold text-sf-dark">Projets à valider</h2>
+            <span class="badge badge-warning">3 en attente</span>
+          </div>
+        </header>
+        <section class="p-6">
+          <div class="space-y-4">
+            <!-- Project 1 -->
+            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-sf-gold transition-all cursor-pointer">
+              <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-sf-dark mb-1">Restaurant halal Paris 15ème</h3>
+                <p class="text-sm text-gray-600 mb-2">Financement: Mudaraba • Montant: 150 000 €</p>
+                <div class="flex gap-2">
+                  <span class="conformite-badge text-xs">
+                    <span>☪</span>
+                    <span>Score IA: 92%</span>
+                  </span>
+                  <span class="badge badge-warning text-xs">En analyse</span>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <button class="btn btn-sm bg-sf-green text-white">Valider</a>
+                <button class="btn-outline btn-sm">Détails</a>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-sf-gold transition-all cursor-pointer">
+              <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-sf-dark mb-1">Startup Tech Education</h3>
+                <p class="text-sm text-gray-600 mb-2">Financement: Musharaka • Montant: 300 000 €</p>
+                <div class="flex gap-2">
+                  <span class="conformite-badge text-xs">
+                    <span>☪</span>
+                    <span>Score IA: 95%</span>
+                  </span>
+                  <span class="badge badge-warning text-xs">Documents vérifiés</span>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <button class="btn btn-sm bg-sf-green text-white">Valider</a>
+                <button class="btn-outline btn-sm">Détails</a>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-sf-gold transition-all cursor-pointer">
+              <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-sf-dark mb-1">Immobilier Nantes</h3>
+                <p class="text-sm text-gray-600 mb-2">Financement: Murabaha • Montant: 500 000 €</p>
+                <div class="flex gap-2">
+                  <span class="conformite-badge text-xs">
+                    <span>☪</span>
+                    <span>Score IA: 88%</span>
+                  </span>
+                  <span class="badge badge-info text-xs">Analyse complète</span>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <button class="btn btn-sm bg-sf-green text-white">Valider</a>
+                <button class="btn-outline btn-sm">Détails</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="lg:col-span-1">
+      <div class="card bg-white rounded-lg border border-gray-200">
+        <header class="p-6 border-b border-gray-200">
+          <h2 class="text-xl font-semibold text-sf-dark">Activité récente</h2>
+        </header>
+        <section class="p-6">
+          <div class="space-y-4">
+            <div class="flex gap-3">
+              <div class="w-2 h-2 rounded-full bg-sf-green mt-2"></div>
+              <div>
+                <p class="text-sm font-medium text-sf-dark">Projet validé</p>
+                <p class="text-xs text-gray-600">Restaurant halal Lyon</p>
+                <p class="text-xs text-gray-400 mt-1">Il y a 2h</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="w-2 h-2 rounded-full bg-sf-blue mt-2"></div>
+              <div>
+                <p class="text-sm font-medium text-sf-dark">Nouvel utilisateur</p>
+                <p class="text-xs text-gray-600">Ahmed K. (Investisseur)</p>
+                <p class="text-xs text-gray-400 mt-1">Il y a 3h</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+              <div>
+                <p class="text-sm font-medium text-sf-dark">Jalon atteint</p>
+                <p class="text-xs text-gray-600">Projet Tech Education</p>
+                <p class="text-xs text-gray-400 mt-1">Il y a 5h</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="w-2 h-2 rounded-full bg-sf-green mt-2"></div>
+              <div>
+                <p class="text-sm font-medium text-sf-dark">Nouveau projet</p>
+                <p class="text-xs text-gray-600">E-commerce mode modest</p>
+                <p class="text-xs text-gray-400 mt-1">Il y a 6h</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="w-2 h-2 rounded-full bg-sf-blue mt-2"></div>
+              <div>
+                <p class="text-sm font-medium text-sf-dark">Engagement marqué</p>
+                <p class="text-xs text-gray-600">50 000€ sur Restaurant Paris</p>
+                <p class="text-xs text-gray-400 mt-1">Il y a 8h</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="p-6 border-t border-gray-200">
+          <button class="btn-outline btn-sm w-full">Voir tout →</a>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Stats -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Distribution by Contract Type -->
+    <div class="card bg-white rounded-lg border border-gray-200">
+      <header class="p-6 border-b border-gray-200">
+        <h2 class="text-lg font-semibold text-sf-dark">Type de contrats</h2>
+      </header>
+      <section class="p-6">
+        <div class="space-y-4">
+          <div>
+            <div class="flex justify-between text-sm mb-2">
+              <span class="font-medium">Mudaraba</span>
+              <span class="text-gray-600">45%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-sf-gold h-2 rounded-full" style="width: 45%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-2">
+              <span class="font-medium">Musharaka</span>
+              <span class="text-gray-600">35%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-sf-green h-2 rounded-full" style="width: 35%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-2">
+              <span class="font-medium">Murabaha</span>
+              <span class="text-gray-600">20%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-blue-500 h-2 rounded-full" style="width: 20%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Top Sectors -->
+    <div class="card bg-white rounded-lg border border-gray-200">
+      <header class="p-6 border-b border-gray-200">
+        <h2 class="text-lg font-semibold text-sf-dark">Secteurs populaires</h2>
+      </header>
+      <section class="p-6">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span>
+              <span class="text-sm">Restauration</span>
+            </div>
+            <span class="badge badge-outline text-xs">18 projets</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+              <span class="text-sm">Tech</span>
+            </div>
+            <span class="badge badge-outline text-xs">15 projets</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+              <span class="text-sm">Immobilier</span>
+            </div>
+            <span class="badge badge-outline text-xs">12 projets</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+              <span class="text-sm">Commerce</span>
+            </div>
+            <span class="badge badge-outline text-xs">10 projets</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+              <span class="text-sm">Éducation</span>
+            </div>
+            <span class="badge badge-outline text-xs">8 projets</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- System Health -->
+    <div class="card bg-white rounded-lg border border-gray-200">
+      <header class="p-6 border-b border-gray-200">
+        <h2 class="text-lg font-semibold text-sf-dark">État du système</h2>
+      </header>
+      <section class="p-6">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-sf-green"></div>
+              <span class="text-sm">Serveurs</span>
+            </div>
+            <span class="badge badge-success text-xs">Opérationnel</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-sf-green"></div>
+              <span class="text-sm">Base de données</span>
+            </div>
+            <span class="badge badge-success text-xs">Opérationnel</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-sf-green"></div>
+              <span class="text-sm">API IA</span>
+            </div>
+            <span class="badge badge-success text-xs">Opérationnel</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-sf-green"></div>
+              <span class="text-sm">Emails</span>
+            </div>
+            <span class="badge badge-success text-xs">Opérationnel</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-sf-green"></div>
+              <span class="text-sm">Stockage</span>
+            </div>
+            <span class="badge badge-outline text-xs">78% utilisé</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

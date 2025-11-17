@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title><%= content_for(:title) || "Sharifund - Maquettes V2" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Basecoat UI CSS %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.2/dist/basecoat.cdn.min.css">
+    
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    
+    <%# Basecoat UI JavaScript %>
+    <script src="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.2/dist/js/all.min.js" defer></script>
+  </head>
+
+  <body class="antialiased">
+    <%# Custom styles for Sharifund - in body to override Basecoat %>
+    <style>
+      :root {
+        --sf-gold: #C4A574;
+        --sf-gold-light: #D4B584;
+        --sf-gold-pale: #F5F0E8;
+        --sf-black: #000000;
+        --sf-dark: #2C2C2C;
+        --sf-white: #FAFAFA;
+        --sf-green: #2D7A4F;
+        --sf-green-light: #3D9A5F;
+        --sf-grey: #E5E5E5;
+        --sf-grey-dark: #6B7280;
+        --sf-blue: #4A90E2;
+        --sf-warning: #F59E0B;
+        --sf-error: #DC2626;
+      }
+      
+      body {
+        background-color: var(--sf-white);
+        color: var(--sf-black);
+        font-family: 'Inter', sans-serif;
+      }
+      
+      /* Custom background colors */
+      .bg-sf-gold { background-color: var(--sf-gold) !important; }
+      .bg-sf-gold-pale { background-color: var(--sf-gold-pale) !important; }
+      .bg-sf-green { background-color: var(--sf-green) !important; }
+      .bg-sf-dark { background-color: var(--sf-dark) !important; }
+      
+      /* Custom text colors */
+      .text-sf-gold { color: var(--sf-gold) !important; }
+      .text-sf-green { color: var(--sf-green) !important; }
+      .text-sf-dark { color: var(--sf-dark) !important; }
+      .text-sf-black { color: var(--sf-black) !important; }
+      .text-sf-white { color: var(--sf-white) !important; }
+      
+      /* Custom border colors */
+      .border-sf-gold { border-color: var(--sf-gold) !important; }
+      .border-sf-grey { border-color: var(--sf-grey) !important; }
+      
+      /* Hover states for custom backgrounds */
+      .hover\:bg-sf-gold-light:hover { background-color: var(--sf-gold-light) !important; }
+      .hover\:bg-sf-gold:hover { background-color: var(--sf-gold) !important; }
+      
+      /* FIX IMPORTANT: Badge-outline with dark background and white text */
+      .badge-outline,
+      .badge.badge-outline {
+        color: var(--sf-white) !important;
+        background-color: var(--sf-dark) !important;
+        border-color: var(--sf-dark) !important;
+      }
+      
+      .badge-outline:hover,
+      .badge.badge-outline:hover {
+        background-color: var(--sf-black) !important;
+        border-color: var(--sf-black) !important;
+      }
+      
+      /* Fix pour icons dans boutons - ensure proper spacing and inheritance */
+      .btn svg, 
+      .btn-outline svg, 
+      .btn-ghost svg, 
+      a.btn svg,
+      button.btn svg {
+        flex-shrink: 0;
+        margin-right: 0.5rem; /* 8px spacing between icon and text */
+      }
+      
+      /* Ensure buttons display as flex with gap */
+      .btn, 
+      button.btn,
+      a.btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+      }
+      
+      /* Remove margin when svg is the only child or last child */
+      .btn svg:only-child,
+      button.btn svg:only-child {
+        margin-right: 0;
+      }
+      
+      .btn-sf-primary {
+        background: linear-gradient(135deg, var(--sf-gold) 0%, var(--sf-gold-light) 100%);
+        color: var(--sf-black);
+      }
+      
+      .btn-sf-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(196, 165, 116, 0.3);
+      }
+      
+      .logo-sharifund {
+        height: 48px;
+        width: auto;
+      }
+      
+      .nav-link {
+        transition: all 0.3s ease;
+      }
+      
+      .nav-link:hover {
+        color: var(--sf-gold);
+      }
+      
+      .card-sf {
+        background: white;
+        border: 1px solid var(--sf-grey);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+      
+      .card-sf:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+      }
+      
+      .badge-sf-success {
+        background: var(--sf-green);
+        color: white;
+      }
+      
+      .badge-sf-warning {
+        background: var(--sf-warning);
+        color: white;
+      }
+      
+      .badge-sf-error {
+        background: var(--sf-error);
+        color: white;
+      }
+      
+      .badge-sf-info {
+        background: var(--sf-blue);
+        color: white;
+      }
+      
+      .sidebar-sf {
+        background: white;
+        border-right: 1px solid var(--sf-grey);
+        min-height: calc(100vh - 64px);
+      }
+      
+      .sidebar-sf .nav-item {
+        padding: 12px 24px;
+        color: var(--sf-dark);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-left: 3px solid transparent;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      
+      .sidebar-sf .nav-item:hover {
+        background: var(--sf-gold-pale);
+        border-left-color: var(--sf-gold);
+      }
+      
+      .sidebar-sf .nav-item.active {
+        background: var(--sf-gold-pale);
+        border-left-color: var(--sf-gold);
+        color: var(--sf-black);
+        font-weight: 600;
+      }
+      
+      .stat-card-sf {
+        background: white;
+        border: 1px solid var(--sf-grey);
+        border-radius: 12px;
+        padding: 24px;
+        text-align: center;
+      }
+      
+      .stat-number-sf {
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--sf-black);
+      }
+      
+      .conformite-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--sf-green);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 14px;
+      }
+    </style>
+    
+    <%= yield %>
+  </body>
+</html>
