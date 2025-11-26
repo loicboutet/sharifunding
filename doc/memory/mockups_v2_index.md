@@ -8,7 +8,7 @@ Page d'index présentant toutes les maquettes organisées par catégorie avec na
 
 ---
 
-## 🌍 Pages Publiques (4 pages)
+## 🌍 Pages Publiques (6 pages)
 
 ### 1. Page d'Index
 - **URL:** `/mockups2`
@@ -20,15 +20,39 @@ Page d'index présentant toutes les maquettes organisées par catégorie avec na
 - **URL:** `/mockups2/about`
 - **Fichier:** `app/views/mockups2/public/about.html.erb`
 - **Layout:** `mockups2.html.erb`
-- **Contenu:** Mission, types de financement halal, stats, CTA, footer complet
+- **Contenu:** Mission, types de financement halal, stats, CTA, footer complet, lien vers Explorer
 
-### 3. Connexion
+### 3. Explorer les Projets (Public) ⭐ NOUVEAU
+- **URL:** `/mockups2/projects`
+- **Fichier:** `app/views/mockups2/public/projects.html.erb`
+- **Layout:** `mockups2.html.erb`
+- **Contenu:** 
+  - Catalogue de projets accessible sans connexion
+  - Filtres (type contrat, secteur, montant)
+  - Cards projets avec score conformité et progression
+  - Boutons "Intéressé" et "Détails" redirigent vers inscription/login
+  - CTA final pour création de compte
+- **Highlight:** Page d'acquisition visiteurs → conversion inscription
+
+### 4. Détail Projet (Public) ⭐ NOUVEAU
+- **URL:** `/mockups2/projects/:id`
+- **Fichier:** `app/views/mockups2/public/show.html.erb`
+- **Layout:** `mockups2.html.erb`
+- **Contenu:**
+  - Infos projet visibles (description, jalons, entrepreneur)
+  - Documents listés mais verrouillés (badge "Connexion requise")
+  - Timeline des jalons visible
+  - CTA "Créer un compte investisseur" pour débloquer les actions
+  - Badge conformité Charia avec score IA
+- **Highlight:** Teaser pour inciter à l'inscription
+
+### 5. Connexion
 - **URL:** `/mockups2/auth/login`
 - **Fichier:** `app/views/mockups2/auth/login.html.erb`
 - **Layout:** `mockups2.html.erb`
 - **Contenu:** Formulaire login, OAuth Google, lien inscription
 
-### 4. Inscription
+### 6. Inscription
 - **URL:** `/mockups2/auth/register`
 - **Fichier:** `app/views/mockups2/auth/register.html.erb`
 - **Layout:** `mockups2.html.erb`
@@ -241,7 +265,7 @@ Page d'index présentant toutes les maquettes organisées par catégorie avec na
 
 ## 🎯 Pages Critiques (Must-See)
 
-### Top 5 des maquettes à voir absolument:
+### Top 6 des maquettes à voir absolument:
 
 1. **`/mockups2/admin/projects/1/validation`**
    - Validation Charia avec analyse IA complète
@@ -254,19 +278,24 @@ Page d'index présentant toutes les maquettes organisées par catégorie avec na
    - Jalons dynamiques
    - Upload documents
 
-3. **`/mockups2/investor/projects/1`**
+3. **`/mockups2/projects`** ⭐ NOUVEAU
+   - Page publique d'exploration des projets
+   - Conversion visiteurs → inscrits
+   - Filtres accessibles sans compte
+
+4. **`/mockups2/investor/projects/1`**
    - Détail projet complet
    - Timeline jalons visuelle
    - Documents téléchargeables
    - Conformité Charia détaillée
 
-4. **`/mockups2/investor/projects`**
+5. **`/mockups2/investor/projects`**
    - Exploration projets avec filtres
    - Cards design moderne
    - Badges conformité
    - États différents (recommandé, suivi, financé)
 
-5. **`/mockups2/investor/interests/new`**
+6. **`/mockups2/investor/interests/new`**
    - UX marquage d'intérêt
    - Slider montant
    - Messages contextuels
@@ -276,12 +305,35 @@ Page d'index présentant toutes les maquettes organisées par catégorie avec na
 
 ## 📊 Statistiques des Maquettes
 
-- **Total pages:** 30 vues
+- **Total pages:** 32 vues
 - **Total contrôleurs:** 22 contrôleurs
 - **Total layouts:** 4 layouts
-- **Lignes de code:** ~6000 lignes HTML/ERB
+- **Lignes de code:** ~6500 lignes HTML/ERB
 - **Composants Basecoat:** 15+ types utilisés
 - **Colors custom:** 11 variables CSS
+
+---
+
+## 🔗 Navigation Entre Pages Publiques
+
+Les pages publiques sont maintenant interconnectées:
+
+### Header Navigation (toutes pages publiques):
+- Accueil → `/mockups2`
+- Explorer → `/mockups2/projects`
+- À propos → `/mockups2/about`
+- Connexion → `/mockups2/auth/login`
+- Inscription → `/mockups2/auth/register`
+
+### Flux de Conversion:
+```
+Visiteur → Explorer les projets → Détail projet (verrouillé) → Inscription → Investisseur connecté
+```
+
+### CTAs clés:
+- Page Explorer: "Créer mon compte investisseur"
+- Page Détail Projet: Documents "Connexion requise", CTA inscription
+- Page About: "Voir les projets", "Créer mon compte"
 
 ---
 
@@ -311,6 +363,14 @@ Page d'index présentant toutes les maquettes organisées par catégorie avec na
 </div>
 ```
 
+### Document Verrouillé (Public)
+```html
+<span class="badge badge-outline text-xs">
+  <svg><!-- lock icon --></svg>
+  Connexion requise
+</span>
+```
+
 ### Timeline Jalons
 - États: completed (vert), in_progress (or), upcoming (gris)
 - Connexions visuelles entre jalons
@@ -323,9 +383,9 @@ Page d'index présentant toutes les maquettes organisées par catégorie avec na
 Toutes les pages ont été testées et se chargent sans erreur:
 
 ```bash
-✓ Routes configurées (31 routes)
+✓ Routes configurées (33 routes)
 ✓ Contrôleurs chargent (22)
-✓ Templates existent (30)
+✓ Templates existent (32)
 ✓ Syntaxe ERB valide
 ✓ Layouts imbriqués fonctionnels
 ```
@@ -333,6 +393,16 @@ Toutes les pages ont été testées et se chargent sans erreur:
 ---
 
 ## 🔄 Parcours Utilisateur Complets
+
+### Journey Visiteur: Découverte → Inscription
+1. Landing page (About ou Home)
+2. Click "Explorer les projets"
+3. Browse projets (filtre secteur)
+4. Click sur un projet
+5. Voir détails + jalons
+6. Click "Télécharger" → "Connexion requise"
+7. Click "Créer compte investisseur"
+8. Remplir formulaire inscription ✓
 
 ### Journey Admin: Validation Projet
 1. Dashboard → Voir "3 en attente"
@@ -415,6 +485,8 @@ Ces maquettes V2 offrent:
 - ✅ Composants réutilisables
 - ✅ Code maintenable
 - ✅ Tous les user journeys illustrés
+- ✅ Pages publiques pour acquisition visiteurs
+- ✅ Flux de conversion vers inscription
 - ✅ Charte Sharifund respectée
 - ✅ Basecoat UI bien intégré
 
@@ -422,6 +494,6 @@ Ces maquettes V2 offrent:
 
 ---
 
-*Documentation créée le: Janvier 2024*  
-*Version: 2.0*  
+*Documentation mise à jour le: Janvier 2024*  
+*Version: 2.1*  
 *Framework: Basecoat UI 0.3.2 + Tailwind CSS*

@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     
     # Public pages
     get "about", to: "public#about"
+    get "projects", to: "public#projects", as: :public_projects
+    get "projects/:id", to: "public#show", as: :public_project
     get "auth/login", to: "auth#login"
     get "auth/register", to: "auth#register"
     

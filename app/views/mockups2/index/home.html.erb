@@ -9,9 +9,9 @@
         <span class="text-sm bg-sf-gold text-sf-black px-3 py-1 rounded-full font-semibold ml-3">V2 Basecoat</span>
       </div>
       <div class="flex gap-3">
-        <a href="/mockups" class="btn-outline btn-sm" target="_blank">
-          Voir V1 (comparaison)
-        </a>
+        <%= link_to mockups2_public_projects_path, class: "btn-outline btn-sm" do %>
+          Explorer les projets
+        <% end %>
         <%= link_to mockups2_about_path, class: "btn bg-sf-gold text-sf-black btn-sm" do %>
           Page À propos
         <% end %>
@@ -24,7 +24,7 @@
     <div class="max-w-7xl mx-auto px-6 text-center">
       <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-sf-gold mb-6 shadow-sm">
         <span class="w-2 h-2 bg-sf-green rounded-full animate-pulse"></span>
-        <span class="text-sm font-medium text-sf-dark">30 maquettes disponibles</span>
+        <span class="text-sm font-medium text-sf-dark">32 maquettes disponibles</span>
       </div>
       
       <h1 class="text-5xl font-bold mb-6 text-sf-dark">
@@ -35,14 +35,14 @@
         Un design system accessible et professionnel
       </p>
       <p class="text-gray-600 max-w-2xl mx-auto mb-8">
-        Découvrez 30 pages organisées par user journey (Admin, Entrepreneur, Investisseur) 
+        Découvrez 32 pages organisées par user journey (Admin, Entrepreneur, Investisseur) 
         avec des composants réutilisables et une accessibilité WCAG 2.1 AA
       </p>
 
       <!-- Quick Stats -->
       <div class="flex justify-center gap-8 mt-8">
         <div class="text-center">
-          <div class="text-3xl font-bold text-sf-gold">30</div>
+          <div class="text-3xl font-bold text-sf-gold">32</div>
           <div class="text-sm text-gray-600">Pages</div>
         </div>
         <div class="text-center">
@@ -106,14 +106,53 @@
       <div class="flex items-center gap-3 mb-6">
         <span class="text-4xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
         <h2 class="text-3xl font-bold text-sf-dark">Pages Publiques</h2>
-        <span class="badge badge-outline">4 pages</span>
+        <span class="badge badge-outline">6 pages</span>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <a href="<%= mockups2_about_path %>" class="card-sf p-6 hover:shadow-lg transition-all group">
           <div class="text-5xl mb-4 group-hover:scale-110 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
           <h3 class="text-xl font-semibold mb-2 group-hover:text-sf-gold">À propos</h3>
           <p class="text-sm text-gray-600 mb-4">Présentation, mission, types de financement</p>
+          <div class="text-sf-gold font-medium flex items-center gap-2">
+            Voir
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </div>
+        </a>
+        
+        <a href="<%= mockups2_public_projects_path %>" class="card-sf p-6 hover:shadow-lg transition-all group bg-gradient-to-br from-blue-50 to-white border-2 border-sf-blue">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-5xl group-hover:scale-110 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+            <span class="badge bg-sf-blue text-white text-xs">Nouveau</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-sf-gold">Explorer les projets</h3>
+          <p class="text-sm text-gray-600 mb-4">Catalogue public, filtres, cards projets</p>
+          <div class="flex gap-2 text-xs mb-3">
+            <span class="badge badge-outline">Grid</span>
+            <span class="badge badge-outline">Filtres</span>
+            <span class="badge badge-outline">Sans connexion</span>
+          </div>
+          <div class="text-sf-gold font-medium flex items-center gap-2">
+            Voir
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="<%= mockups2_public_project_path(id: 1) %>" class="card-sf p-6 hover:shadow-lg transition-all group bg-gradient-to-br from-purple-50 to-white border-2 border-purple-300">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-5xl group-hover:scale-110 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+            <span class="badge bg-purple-600 text-white text-xs">Nouveau</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-sf-gold">Détail projet public</h3>
+          <p class="text-sm text-gray-600 mb-4">Vue projet, docs verrouillés, CTA inscription</p>
+          <div class="flex gap-2 text-xs mb-3">
+            <span class="badge badge-outline">Timeline</span>
+            <span class="badge badge-outline">Docs verrouillés</span>
+          </div>
           <div class="text-sf-gold font-medium flex items-center gap-2">
             Voir
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -524,26 +563,26 @@
           <span class="badge badge-outline text-xs">Entrepreneur</span>
         </a>
 
-        <a href="<%= mockups2_investor_project_path(id: 1) %>" class="card bg-gradient-to-br from-blue-100 to-blue-50 rounded-lg border-2 border-blue-400 p-6 hover:shadow-xl transition-all">
+        <a href="<%= mockups2_public_projects_path %>" class="card bg-gradient-to-br from-blue-100 to-blue-50 rounded-lg border-2 border-blue-400 p-6 hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-5xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+            <span class="badge bg-blue-600 text-white font-bold">N°3</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-sf-dark">Explorer Projets (Public)</h3>
+          <p class="text-sm text-gray-700 mb-3">
+            Catalogue public, filtres avancés, CTA vers inscription
+          </p>
+          <span class="badge badge-outline text-xs">Public</span>
+        </a>
+
+        <a href="<%= mockups2_investor_project_path(id: 1) %>" class="card bg-gradient-to-br from-purple-100 to-purple-50 rounded-lg border-2 border-purple-400 p-6 hover:shadow-xl transition-all">
           <div class="flex items-center justify-between mb-4">
             <span class="text-5xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-            <span class="badge bg-blue-600 text-white font-bold">N°3</span>
+            <span class="badge bg-purple-600 text-white font-bold">N°4</span>
           </div>
           <h3 class="text-xl font-bold mb-2 text-sf-dark">Détail Projet Investor</h3>
           <p class="text-sm text-gray-700 mb-3">
             Timeline jalons, documents, conformité Charia, profil entrepreneur
-          </p>
-          <span class="badge badge-outline text-xs">Investisseur</span>
-        </a>
-
-        <a href="<%= mockups2_investor_projects_path %>" class="card bg-gradient-to-br from-purple-100 to-purple-50 rounded-lg border-2 border-purple-400 p-6 hover:shadow-xl transition-all">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-5xl"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
-            <span class="badge bg-purple-600 text-white font-bold">N°4</span>
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-sf-dark">Explorer Projets</h3>
-          <p class="text-sm text-gray-700 mb-3">
-            Grid moderne, filtres avancés, cards design, badges conformité
           </p>
           <span class="badge badge-outline text-xs">Investisseur</span>
         </a>
@@ -583,10 +622,10 @@
         <div>
           <h3 class="font-semibold text-sf-dark mb-3">Stats</h3>
           <div class="text-sm space-y-1">
-            <p class="text-gray-700"><strong>30</strong> pages créées</p>
+            <p class="text-gray-700"><strong>32</strong> pages créées</p>
             <p class="text-gray-700"><strong>22</strong> contrôleurs</p>
             <p class="text-gray-700"><strong>4</strong> layouts</p>
-            <p class="text-gray-700"><strong>~6000</strong> lignes de code</p>
+            <p class="text-gray-700"><strong>~6500</strong> lignes de code</p>
           </div>
         </div>
       </div>

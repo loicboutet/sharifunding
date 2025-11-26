@@ -10,6 +10,7 @@
       
       <div class="flex items-center gap-6">
         <%= link_to "Accueil", mockups2_root_path, class: "text-gray-600 hover:text-sf-gold transition-colors" %>
+        <%= link_to "Explorer", mockups2_public_projects_path, class: "text-gray-600 hover:text-sf-gold transition-colors" %>
         <%= link_to "À propos", mockups2_about_path, class: "text-sf-gold font-medium" %>
         <%= link_to mockups2_auth_login_path, class: "btn-outline" do %>
           Connexion
@@ -174,8 +175,52 @@
     </div>
   </section>
 
-  <!-- Stats Section -->
+  <!-- Explore Projects CTA -->
   <section class="py-16 bg-gradient-to-br from-sf-gold-pale to-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-1">
+          <h2 class="text-3xl font-bold text-sf-dark mb-4">Découvrez nos projets</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Explorez notre catalogue de projets conformes à la finance islamique. 
+            Filtrez par secteur, type de contrat et montant recherché.
+          </p>
+          <div class="flex gap-4">
+            <%= link_to mockups2_public_projects_path, class: "btn bg-sf-gold text-sf-black hover:bg-sf-gold-light text-lg px-8 py-3" do %>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.3-4.3"/>
+              </svg>
+              Explorer les projets
+            <% end %>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+              <div class="text-3xl font-bold text-sf-gold mb-1">34+</div>
+              <div class="text-sm text-gray-600">Projets actifs</div>
+            </div>
+            <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+              <div class="text-3xl font-bold text-sf-green mb-1">92%</div>
+              <div class="text-sm text-gray-600">Score moyen</div>
+            </div>
+            <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+              <div class="text-3xl font-bold text-sf-blue mb-1">6</div>
+              <div class="text-sm text-gray-600">Secteurs</div>
+            </div>
+            <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+              <div class="text-3xl font-bold text-sf-dark mb-1">3</div>
+              <div class="text-sm text-gray-600">Types de contrats</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-sf-dark mb-4">Sharifund en chiffres</h2>
@@ -203,7 +248,7 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20">
+  <section class="py-20 bg-gray-50">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold text-sf-dark mb-6">Prêt à commencer?</h2>
       <p class="text-xl text-gray-600 mb-8">
@@ -213,8 +258,8 @@
         <%= link_to mockups2_auth_register_path, class: "btn bg-sf-gold text-sf-black hover:bg-sf-gold-light text-lg px-8 py-4" do %>
           Créer mon compte
         <% end %>
-        <%= link_to mockups2_auth_login_path, class: "btn-outline text-lg px-8 py-4" do %>
-          Se connecter
+        <%= link_to mockups2_public_projects_path, class: "btn-outline text-lg px-8 py-4" do %>
+          Voir les projets
         <% end %>
       </div>
     </div>
@@ -236,9 +281,9 @@
         <div>
           <h4 class="font-semibold mb-4">Plateforme</h4>
           <ul class="space-y-2 text-sm text-gray-400">
+            <li><%= link_to "Explorer les projets", mockups2_public_projects_path, class: "hover:text-sf-gold" %></li>
+            <li><%= link_to "À propos", mockups2_about_path, class: "hover:text-sf-gold" %></li>
             <li><a href="#" class="hover:text-sf-gold">Comment ça marche</a></li>
-            <li><a href="#" class="hover:text-sf-gold">Types de financement</a></li>
-            <li><a href="#" class="hover:text-sf-gold">Projets</a></li>
             <li><a href="#" class="hover:text-sf-gold">FAQ</a></li>
           </ul>
         </div>

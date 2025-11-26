@@ -1,0 +1,519 @@
+<% content_for :title, "Restaurant halal Paris 15ème - Sharifund" %>
+
+<div class="min-h-screen bg-white">
+  <!-- Header -->
+  <header class="border-b border-gray-200 sticky top-0 bg-white z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <%= link_to mockups2_root_path, class: "logo-sharifund flex items-center gap-2" do %>
+        <%= image_tag "logo.jpg", alt: "Sharifund", class: "h-10" %>
+      <% end %>
+      
+      <div class="flex items-center gap-6">
+        <%= link_to "Accueil", mockups2_root_path, class: "text-gray-600 hover:text-sf-gold transition-colors" %>
+        <%= link_to "Explorer", mockups2_public_projects_path, class: "text-sf-gold font-medium" %>
+        <%= link_to "À propos", mockups2_about_path, class: "text-gray-600 hover:text-sf-gold transition-colors" %>
+        <%= link_to mockups2_auth_login_path, class: "btn-outline" do %>
+          Connexion
+        <% end %>
+        <%= link_to mockups2_auth_register_path, class: "btn bg-sf-gold text-sf-black hover:bg-sf-gold-light" do %>
+          Inscription
+        <% end %>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-6 py-8">
+    <!-- Breadcrumb -->
+    <nav class="mb-6">
+      <ol class="text-gray-600 flex items-center gap-2 text-sm">
+        <li><%= link_to "Accueil", mockups2_root_path, class: "hover:text-sf-gold" %></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li><%= link_to "Projets", mockups2_public_projects_path, class: "hover:text-sf-gold" %></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li class="text-sf-dark font-medium">Restaurant halal Paris 15ème</li>
+      </ol>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Main Content -->
+      <div class="lg:col-span-2 space-y-6">
+        <!-- Hero Image -->
+        <div class="card bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <div class="relative">
+            <div class="w-full aspect-video bg-gradient-to-br from-yellow-200 via-yellow-100 to-yellow-50 flex items-center justify-center">
+              <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-600 mx-auto mb-4"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+                <p class="text-gray-600 text-sm">Image du projet</p>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="conformite-badge shadow-lg">
+                <span>☪</span>
+                <span>Conforme Charia • Score IA: 92%</span>
+              </span>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <h1 class="text-3xl font-bold text-sf-dark mb-2">Restaurant halal Paris 15ème</h1>
+                <p class="text-gray-600">Restaurant gastronomique halal certifié</p>
+              </div>
+              <button class="btn-icon-outline" title="Partager">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                  <polyline points="16 6 12 2 8 6"/>
+                  <line x1="12" x2="12" y1="2" y2="15"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="flex items-center gap-3 mb-6">
+              <span class="badge bg-purple-100 text-purple-800">Mudaraba</span>
+              <span class="badge bg-orange-100 text-orange-800">Restauration</span>
+              <span class="badge badge-outline">Paris, France</span>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 mb-6 p-4 bg-gray-50 rounded-lg">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-sf-dark">150K €</div>
+                <div class="text-xs text-gray-600 mt-1">Objectif</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-sf-gold">12</div>
+                <div class="text-xs text-gray-600 mt-1">Investisseurs</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-sf-dark">24m</div>
+                <div class="text-xs text-gray-600 mt-1">Durée</div>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <div class="flex justify-between text-sm mb-2">
+                <span class="font-medium text-gray-700">Financement simulé</span>
+                <span class="font-bold text-sf-dark">125 000 € / 150 000 €</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="bg-gradient-to-r from-sf-gold to-sf-gold-light h-3 rounded-full flex items-center justify-end pr-3" style="width: 83%">
+                  <span class="text-white text-xs font-bold">83%</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-600 mt-2">Il reste 25 000 € pour atteindre l'objectif</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="card bg-white rounded-lg border border-gray-200">
+          <header class="p-6 border-b border-gray-200">
+            <h2 class="text-xl font-semibold text-sf-dark">Description du projet</h2>
+          </header>
+          <section class="p-6">
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Nous souhaitons créer un restaurant gastronomique halal dans le 15ème arrondissement de Paris, 
+              combinant excellence culinaire et respect strict des principes halal. Notre concept unique marie 
+              la tradition culinaire française avec des standards halal certifiés.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Le restaurant disposera de 60 couverts en intérieur et d'une terrasse de 20 places. 
+              Nous travaillerons exclusivement avec des fournisseurs certifiés halal et emploierons 
+              un chef expérimenté formé aux deux traditions culinaires.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              Notre emplacement stratégique dans un quartier en développement, combiné à l'absence 
+              de concurrence directe dans le segment gastronomique halal, nous positionne idéalement 
+              pour capturer ce marché en croissance.
+            </p>
+          </section>
+        </div>
+
+        <!-- Milestones Timeline -->
+        <div class="card bg-white rounded-lg border border-gray-200">
+          <header class="p-6 border-b border-gray-200">
+            <h2 class="text-xl font-semibold text-sf-dark">Jalons du projet</h2>
+          </header>
+          <section class="p-6">
+            <div class="space-y-6">
+              <!-- Milestone 1 - Completed -->
+              <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 rounded-full bg-sf-green flex items-center justify-center text-white flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                  </div>
+                  <div class="w-0.5 h-full bg-sf-green mt-2"></div>
+                </div>
+                <div class="flex-1 pb-6">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-sf-dark">Obtention du local commercial</h3>
+                    <span class="badge badge-success text-xs">Validé</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-2">
+                    Signature du bail commercial et début des travaux d'aménagement
+                  </p>
+                  <p class="text-xs text-gray-500">Complété le 1er mars 2024</p>
+                </div>
+              </div>
+
+              <!-- Milestone 2 - In Progress -->
+              <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 rounded-full bg-sf-gold flex items-center justify-center text-white font-bold flex-shrink-0">
+                    2
+                  </div>
+                  <div class="w-0.5 h-full bg-gray-200 mt-2"></div>
+                </div>
+                <div class="flex-1 pb-6">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-sf-dark">Travaux d'aménagement</h3>
+                    <span class="badge badge-warning text-xs">En cours</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-3">
+                    Rénovation complète, installation de la cuisine professionnelle
+                  </p>
+                  <div class="mb-2">
+                    <div class="flex justify-between text-xs mb-1">
+                      <span class="text-gray-600">Progression</span>
+                      <span class="font-semibold text-sf-gold">65%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div class="bg-gradient-to-r from-sf-gold to-sf-gold-light h-2 rounded-full" style="width: 65%"></div>
+                    </div>
+                  </div>
+                  <p class="text-xs text-gray-500">Date cible: 1er juin 2024</p>
+                </div>
+              </div>
+
+              <!-- Milestone 3 - Upcoming -->
+              <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-400 font-bold flex-shrink-0">
+                    3
+                  </div>
+                  <div class="w-0.5 h-full bg-gray-200 mt-2"></div>
+                </div>
+                <div class="flex-1 pb-6">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-gray-600">Obtention certificat halal</h3>
+                    <span class="badge badge-outline text-xs">À venir</span>
+                  </div>
+                  <p class="text-sm text-gray-500 mb-2">
+                    Audit et certification par organisme agréé
+                  </p>
+                  <p class="text-xs text-gray-400">Date cible: 15 juin 2024</p>
+                </div>
+              </div>
+
+              <!-- Milestone 4 - Upcoming -->
+              <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                  <div class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-400 font-bold flex-shrink-0">
+                    4
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-gray-600">Ouverture du restaurant</h3>
+                    <span class="badge badge-outline text-xs">À venir</span>
+                  </div>
+                  <p class="text-sm text-gray-500 mb-2">
+                    Inauguration officielle et début de l'activité
+                  </p>
+                  <p class="text-xs text-gray-400">Date cible: 1er juillet 2024</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Documents (require login) -->
+        <div class="card bg-white rounded-lg border border-gray-200">
+          <header class="p-6 border-b border-gray-200">
+            <h2 class="text-xl font-semibold text-sf-dark">Documents disponibles</h2>
+          </header>
+          <section class="p-6">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg bg-gray-50">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-red-600">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium text-sm text-sf-dark">Business Plan 2024.pdf</div>
+                    <div class="text-xs text-gray-600">2.4 MB • 48 pages</div>
+                  </div>
+                </div>
+                <span class="badge badge-outline text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-1"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  Connexion requise
+                </span>
+              </div>
+
+              <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg bg-gray-50">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-green-600">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium text-sm text-sf-dark">Prévisionnel Financier 3 ans.xlsx</div>
+                    <div class="text-xs text-gray-600">856 KB</div>
+                  </div>
+                </div>
+                <span class="badge badge-outline text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-1"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  Connexion requise
+                </span>
+              </div>
+
+              <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg bg-gray-50">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-blue-600">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium text-sm text-sf-dark">Certification Halal AVS.pdf</div>
+                    <div class="text-xs text-gray-600">1.2 MB</div>
+                  </div>
+                </div>
+                <span class="badge badge-outline text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-1"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  Connexion requise
+                </span>
+              </div>
+            </div>
+            
+            <div class="mt-4 p-4 bg-sf-gold-pale rounded-lg border border-sf-gold text-center">
+              <p class="text-sm text-sf-dark mb-3">
+                <strong>Créez un compte</strong> pour télécharger les documents et contacter l'entrepreneur
+              </p>
+              <%= link_to mockups2_auth_register_path, class: "btn bg-sf-gold text-sf-black hover:bg-sf-gold-light" do %>
+                Créer un compte gratuit
+              <% end %>
+            </div>
+          </section>
+        </div>
+
+        <!-- Entrepreneur Profile -->
+        <div class="card bg-white rounded-lg border border-gray-200">
+          <header class="p-6 border-b border-gray-200">
+            <h2 class="text-xl font-semibold text-sf-dark">À propos de l'entrepreneur</h2>
+          </header>
+          <section class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                AK
+              </div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-lg text-sf-dark mb-1">Ahmed Khalil</h3>
+                <p class="text-sm text-gray-600 mb-3">Fondateur • Restaurant Khalil & Co</p>
+                <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                  Fort de 15 ans d'expérience dans la restauration, dont 8 ans comme chef dans des 
+                  établissements étoilés, je souhaite créer un concept unique de gastronomie halal haut de gamme.
+                </p>
+                <div class="p-3 bg-gray-50 rounded-lg text-center">
+                  <p class="text-sm text-gray-600 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    Connectez-vous pour contacter l'entrepreneur
+                  </p>
+                  <%= link_to mockups2_auth_login_path, class: "btn-outline btn-sm" do %>
+                    Se connecter
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-1 space-y-6">
+        <!-- CTA Card -->
+        <div class="card bg-gradient-to-br from-sf-gold-pale to-white rounded-lg border-2 border-sf-gold">
+          <section class="p-6">
+            <div class="text-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sf-gold mx-auto mb-3"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <h3 class="font-bold text-lg text-sf-dark mb-2">Investir dans ce projet</h3>
+              <p class="text-sm text-gray-600">Créez un compte pour marquer votre intérêt</p>
+            </div>
+            <%= link_to mockups2_auth_register_path, class: "btn w-full bg-sf-gold text-sf-black hover:bg-sf-gold-light transition-colors mb-3" do %>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+              Créer un compte investisseur
+            <% end %>
+            <p class="text-xs text-center text-gray-600">Inscription gratuite • Sans engagement</p>
+          </section>
+        </div>
+
+        <!-- Project Details -->
+        <div class="card bg-white rounded-lg border border-gray-200">
+          <header class="p-6 border-b border-gray-200">
+            <h2 class="font-semibold text-sf-dark">Détails financiers</h2>
+          </header>
+          <section class="p-6 space-y-4 text-sm">
+            <div class="flex justify-between">
+              <span class="text-gray-600">Montant recherché</span>
+              <span class="font-bold text-sf-dark">150 000 €</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Montant simulé</span>
+              <span class="font-semibold text-sf-gold">125 000 €</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Reste à financer</span>
+              <span class="font-medium text-gray-700">25 000 €</span>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Type de contrat</span>
+                <span class="badge bg-purple-100 text-purple-800 text-xs">Mudaraba</span>
+              </div>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Rentabilité estimée</span>
+              <span class="font-bold text-sf-green">12% / an</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Durée</span>
+              <span class="font-medium text-gray-700">24 mois</span>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sharia Compliance -->
+        <div class="card bg-green-50 rounded-lg border-2 border-sf-green">
+          <header class="p-6 border-b border-green-200">
+            <h2 class="font-semibold text-green-900 flex items-center gap-2">
+              <span>☪</span>
+              <span>Conformité Charia</span>
+            </h2>
+          </header>
+          <section class="p-6 space-y-3 text-sm">
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sf-green">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              <span class="text-green-900">Activité 100% licite</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sf-green">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              <span class="text-green-900">Pas de riba (intérêt)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sf-green">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              <span class="text-green-900">Certification halal</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sf-green">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              <span class="text-green-900">Partage équitable des risques</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sf-green">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              <span class="text-green-900">Validé par Sharifund</span>
+            </div>
+            
+            <div class="pt-3 border-t border-green-200">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-green-900 mb-1">92%</div>
+                <div class="text-xs text-green-800">Score de conformité IA</div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Other Investors -->
+        <div class="card bg-white rounded-lg border border-gray-200">
+          <header class="p-6 border-b border-gray-200">
+            <h2 class="font-semibold text-sf-dark">Investisseurs intéressés</h2>
+          </header>
+          <section class="p-6">
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-green-600 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-red-400 to-red-600 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white flex items-center justify-center text-xs font-semibold text-gray-600">
+                  +8
+                </div>
+              </div>
+              <span class="text-sm text-gray-600">12 investisseurs</span>
+            </div>
+            <p class="text-xs text-gray-600">
+              Ce projet suscite l'intérêt de nombreux investisseurs. Rejoignez-les !
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-sf-dark text-white py-12 mt-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="logo-sharifund flex items-center gap-2 mb-4" style="color: var(--sf-gold);">
+            <%= image_tag "logo.jpg", alt: "Sharifund", class: "h-10" %>
+          </div>
+          <p class="text-gray-400 text-sm">
+            Plateforme de financement halal innovante et transparente
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Plateforme</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><%= link_to "Explorer les projets", mockups2_public_projects_path, class: "hover:text-sf-gold" %></li>
+            <li><%= link_to "À propos", mockups2_about_path, class: "hover:text-sf-gold" %></li>
+            <li><a href="#" class="hover:text-sf-gold">Comment ça marche</a></li>
+            <li><a href="#" class="hover:text-sf-gold">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Légal</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-sf-gold">Conditions d'utilisation</a></li>
+            <li><a href="#" class="hover:text-sf-gold">Politique de confidentialité</a></li>
+            <li><a href="#" class="hover:text-sf-gold">Mentions légales</a></li>
+            <li><a href="#" class="hover:text-sf-gold">Conformité Charia</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>contact@sharifund.com</li>
+            <li>+33 1 23 45 67 89</li>
+            <li>Paris, France</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+        <p>&copy; 2024 Sharifund. Tous droits réservés. • Plateforme de financement halal</p>
+      </div>
+    </div>
+  </footer>
+</div>
